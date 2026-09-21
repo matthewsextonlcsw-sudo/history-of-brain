@@ -54,6 +54,13 @@ site, or AI-generated summary.
 - Never joke at a patient's expense.
 - Never invent a scene, motive, belief, diagnosis, feeling, quotation, or experience.
 
+**Resolved register (2026-09-21, Matthew's ruling):** The history content uses the house-voice
+craft discipline (specificity, no slop, negation-inversions where they earn their place,
+citation density, high sentence-length variance, real paragraphs) combined with the Jack Hanna
+energy above. Contractions are **allowed** — this resolves the `BRAND_VOICE.md` line 148
+conflict in favor of the document (the house-voice "no contractions" rule is overridden for
+this property). See `11-writing/04-house-voice-matthew-sexton` for the measured fingerprint.
+
 ## 4. Historical and geographic scope
 
 The project is global. Europe and the United States are regions in the story, not the
@@ -504,6 +511,7 @@ This file is the project's governing spec. Changes to it follow:
 | Date | Section(s) | Change | Ruling | Reason |
 |---|---|---|---|---|
 | 2026-09-16 | header, §13, §15, §17–§19 | Batch 08 closure recorded; next-move acceptance criteria, draft state-record mechanism, and change-control protocol added | Matthew approved the agreed spec-panel fix list | SPEC-REVIEW/spec-panel.md (C1, C2, C3, M1, M3, N3) |
+| 2026-09-21 | §3 (Voice) | Voice register resolved: house-voice craft discipline + Jack Hanna energy; contractions allowed (resolves BRAND_VOICE line 148 conflict) | Matthew ruled: option A + "you can use contractions" | Operator ruling on voice register and BRAND_VOICE conflict |
 
 ## 19. Where things live
 
