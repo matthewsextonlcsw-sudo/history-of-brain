@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>The Human Mind Through Time — Historical Timeline</title>
+  <style>
+    :root {
+      --ink:#11110f; --paper:#f2efe5; --card:#fffdf7; --acid:#c6f24e;
+      --rust:#a9452d; --blue:#315a76; --muted:#625d54; --rule:#c9c1b3;
+      --soft-blue:#e5edf1; --soft-rust:#f3e5df; --accent:#c6f24e;
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:linear-gradient(rgba(17,17,15,.035) 1px,transparent 1px),var(--paper);background-size:100% 28px;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
+    button,input,select{font:inherit}button{color:inherit}a{color:inherit;text-underline-offset:3px}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:4px solid var(--blue);outline-offset:3px}.wrap{width:min(1240px,calc(100% - 32px));margin:0 auto}
+    .mast{color:#fff;background:var(--ink);border-bottom:12px solid var(--acid)}.top{display:flex;justify-content:space-between;gap:20px;padding:22px 0;align-items:center}.brand{font-size:.78rem;font-weight:950;letter-spacing:.1em;text-transform:uppercase}.status{display:inline-flex;gap:8px;align-items:center;border:1px solid #fff;padding:7px 10px;font-size:.72rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase}.status:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--acid)}
+    .hero{display:grid;grid-template-columns:1.35fr .65fr;gap:54px;align-items:end;padding:72px 0 70px}.eyebrow{color:var(--acid);font-size:.8rem;font-weight:950;letter-spacing:.16em;text-transform:uppercase}h1,h2,h3{line-height:.98;letter-spacing:-.04em}h1{margin:17px 0 20px;max-width:930px;font-size:clamp(3.6rem,9vw,8rem);text-transform:uppercase}.hero-copy{margin:0;max-width:780px;color:#dfddd5;font-size:clamp(1.05rem,2vw,1.35rem)}.hero-aside{border-left:7px solid var(--acid);padding-left:20px}.hero-aside strong{display:block;color:var(--acid);font-size:2.7rem;line-height:1}.hero-aside span{display:block;margin:7px 0 20px;color:#dfddd5}
+    .jump{position:sticky;top:0;z-index:20;background:rgba(242,239,229,.96);border-bottom:2px solid var(--ink);backdrop-filter:blur(8px)}.jump .wrap{display:flex;gap:18px;padding:12px 0;overflow-x:auto;white-space:nowrap}.jump a{font-size:.75rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase}
+    main{padding:54px 0 100px}.intro{display:grid;grid-template-columns:.7fr 1.3fr;gap:46px;margin-bottom:52px}.title{margin:0;font-size:clamp(2.35rem,5.5vw,4.8rem);text-transform:uppercase}.lead{margin:0;font-family:Georgia,serif;font-size:clamp(1.15rem,2.2vw,1.5rem)}.note{margin-top:22px;padding:17px 19px;background:var(--acid);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);font-weight:800}
+    .controls{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:12px;margin:0 0 34px;padding:18px;background:var(--ink);border:6px solid var(--accent)}.control label{display:block;margin:0 0 6px;color:var(--acid);font-size:.7rem;font-weight:950;letter-spacing:.08em;text-transform:uppercase}.control input,.control select{width:100%;min-height:46px;padding:10px 12px;border:2px solid #fff;background:#fff;color:var(--ink)}.clear{align-self:end;min-height:46px;padding:10px 15px;border:2px solid #fff;background:transparent;color:#fff;font-weight:900;cursor:pointer}.clear:hover{background:#fff;color:var(--ink)}
+    .rail-wrap{position:relative;margin:0 0 54px;padding:24px 0 8px;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}.rail-wrap:before{content:"";position:absolute;left:0;right:0;top:75px;height:7px;background:var(--ink)}.rail{position:relative;display:flex;gap:10px;overflow-x:auto;padding:0 2px 18px;scroll-snap-type:x proximity}.era-button{position:relative;z-index:1;flex:0 0 178px;min-height:118px;padding:14px;text-align:left;border:3px solid var(--ink);background:var(--card);box-shadow:4px 4px 0 var(--ink);cursor:pointer;scroll-snap-align:start}.era-button:hover{transform:translateY(-2px)}.era-button[aria-pressed="true"]{background:var(--band-color,var(--acid))}.era-button .era-id{display:block;font-size:.72rem;font-weight:950;letter-spacing:.08em}.era-button strong{display:block;margin:19px 0 6px;text-transform:uppercase;line-height:1.05}.era-button small{display:block;color:#423f39;font-weight:700}.era-button.all{--band-color:var(--acid)}
+    .era-head{display:grid;grid-template-columns:.72fr 1.28fr;gap:42px;margin-bottom:28px;padding:clamp(24px,4vw,44px);background:var(--card);border:4px solid var(--ink);box-shadow:8px 8px 0 var(--ink)}.era-label{color:var(--rust);font-weight:950;letter-spacing:.09em;text-transform:uppercase}.era-head h2{margin:13px 0 8px;font-size:clamp(2.3rem,5vw,4.6rem);text-transform:uppercase}.dates{font-weight:900}.era-job{margin:0;font-family:Georgia,serif;font-size:1.28rem}.caution{margin-top:19px;padding:15px;border-left:7px solid var(--rust);background:var(--soft-rust)}.era-sources{margin-top:18px}.era-sources summary{font-weight:900;cursor:pointer}.era-sources ul{margin-bottom:0;padding-left:20px}.era-sources li{margin:6px 0}
+    .results-row{display:flex;justify-content:space-between;gap:18px;align-items:end;margin:44px 0 18px}.results-row h2{margin:0;font-size:clamp(2rem,4.5vw,4rem);text-transform:uppercase}.result-count{font-weight:900}.group{margin:0 0 48px}.group-title{display:flex;gap:14px;align-items:baseline;margin:30px 0 14px;padding-bottom:10px;border-bottom:3px solid var(--ink)}.group-title span{color:var(--rust);font-weight:950}.group-title h3{margin:0;font-size:2rem;text-transform:uppercase}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{display:flex;flex-direction:column;min-height:285px;padding:22px;background:var(--card);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink)}.card-top{display:flex;justify-content:space-between;gap:12px;align-items:start}.topic-id{color:var(--rust);font-weight:950;letter-spacing:.05em}.state{padding:3px 7px;border:1px solid var(--ink);background:var(--acid);font-size:.65rem;font-weight:950;letter-spacing:.06em;text-transform:uppercase}.card h3{margin:25px 0 12px;font-size:1.45rem;text-transform:uppercase}.card p{margin:0;color:var(--muted)}.chips{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0}.chip{padding:4px 7px;border:1px solid var(--ink);font-size:.68rem;font-weight:800}.chip.region{background:var(--soft-blue)}.chip.theme{background:var(--soft-rust)}.citations{margin-top:auto;padding-top:12px;border-top:1px solid var(--rule)}.citations summary{cursor:pointer;font-size:.77rem;font-weight:900;text-transform:uppercase}.citations ul{margin:9px 0 0;padding-left:18px}.citations li{margin:5px 0;font-size:.82rem}.empty{padding:42px;border:4px dashed var(--ink);background:var(--card);text-align:center}.empty h3{font-size:2rem;margin:0 0 10px;text-transform:uppercase}
+    .legend{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:76px 0}.legend article{padding:24px;border:3px solid var(--ink)}.legend article:nth-child(1){background:var(--acid)}.legend article:nth-child(2){background:var(--soft-blue)}.legend article:nth-child(3){background:var(--soft-rust)}.legend h3{margin-top:0;text-transform:uppercase}.legend p{margin-bottom:0}.next{padding:clamp(28px,5vw,58px);background:var(--ink);color:#fff;border:8px solid var(--acid)}.next h2{color:var(--acid);margin:0 0 20px;font-size:clamp(2.4rem,5vw,4.5rem);text-transform:uppercase}.next p{max-width:880px;font-size:1.1rem}.next-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}.next-links a{padding:10px 13px;border:2px solid #fff;font-weight:800}.next-links a:hover{color:var(--ink);background:#fff}
+    footer{padding:32px 0 46px;color:var(--muted);font-size:.85rem}
+    @media(max-width:960px){.hero,.intro,.era-head{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.controls{grid-template-columns:1fr 1fr}.clear{align-self:stretch}.hero-aside{display:grid;grid-template-columns:auto 1fr;gap:8px 18px}.hero-aside span{margin:0}.legend{grid-template-columns:1fr}}
+    @media(max-width:600px){.wrap{width:min(100% - 22px,1240px)}.top{flex-direction:column;align-items:flex-start}.hero{padding:46px 0}h1{font-size:3.35rem}.controls,.cards{grid-template-columns:1fr}.era-button{flex-basis:154px}.rail-wrap:before{top:72px}.era-head{box-shadow:5px 5px 0 var(--ink)}.results-row{align-items:start;flex-direction:column}.card{min-height:0}.group-title h3{font-size:1.55rem}.jump .wrap{gap:14px}}
+    @media(print){.jump,.controls{display:none}.rail{flex-wrap:wrap;overflow:visible}.era-button{flex:1 0 21%}.card,.era-head{box-shadow:none}.cards{grid-template-columns:1fr 1fr}body{background:#fff}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.era-button:hover{transform:none}}
+  </style>
+</head>
+<body>
+  <header class="mast">
+    <div class="wrap">
+      <div class="top"><div class="brand">Couch Commons · History Project</div><div class="status">Interactive timeline · Mapped v0.1</div></div>
+      <div class="hero">
+        <div><div class="eyebrow">Follow the questions humans kept asking</div><h1>The human mind through time</h1><p class="hero-copy">A global journey through minds, emotions, distress, care, coping, psychology, brain science, social work, institutions, rights, and the people who lived the consequences.</p></div>
+        <div class="hero-aside"><div><strong id="topicTotal">—</strong><span>mapped topic doors</span></div><div><strong id="bandTotal">—</strong><span>overlapping time bands</span></div></div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="jump" aria-label="Timeline sections"><div class="wrap"><a href="#how">How it works</a><a href="#timeline">Timeline</a><a href="#topics">Topics</a><a href="#method">Evidence state</a><a href="#next">Project documents</a></div></nav>
+
+  <main class="wrap">
+    <section class="intro" id="how">
+      <h2 class="title">A timeline without a trapdoor</h2>
+      <div><p class="lead">History did not march everywhere through the same ancient, medieval, and modern stages. These overlapping bands help readers travel; every page still has to name the place and dates where its story applies.</p><div class="note"><strong>Equal space does not mean equal duration.</strong> Deep prehistory would swallow the screen on a mathematically scaled line. Here, every band gets enough room to explore—and its date label tells the truth.</div></div>
+    </section>
+
+    <section id="timeline" aria-labelledby="timeline-title">
+      <h2 class="title" id="timeline-title">Choose a time band</h2>
+      <div class="controls" aria-label="Timeline filters">
+        <div class="control"><label for="search">Search the timeline</label><input id="search" type="search" placeholder="Try emotion, social work, China, trauma…" autocomplete="off"></div>
+        <div class="control"><label for="theme">Theme</label><select id="theme"><option value="All">All themes</option></select></div>
+        <div class="control"><label for="region">Place or network</label><select id="region"><option value="All">All places</option></select></div>
+        <button class="clear" id="clear" type="button">Clear filters</button>
+      </div>
+      <div class="rail-wrap"><div class="rail" id="eraRail" role="group" aria-label="Historical time bands"></div></div>
+      <div id="eraHead"></div>
+    </section>
+
+    <section id="topics" aria-labelledby="topics-title">
+      <div class="results-row"><h2 id="topics-title">Mapped topics</h2><div class="result-count" id="resultCount" aria-live="polite"></div></div>
+      <div id="topicResults"></div>
+    </section>
+
+    <section class="legend" id="method" aria-label="Timeline evidence state">
+      <article><h3>Mapped</h3><p>A topic has a real job in the architecture and a responsible research path. Every topic shown here is at this state.</p></article>
+      <article><h3>Citation anchor</h3><p>An opened source supports the topic's placement or a bounded example. It does not make every possible public sentence verified.</p></article>
+      <article><h3>Not yet an article</h3><p>Before publication, each topic still needs claim-level sourcing, lived-experience and local perspectives, translation review, citations, and editorial approval.</p></article>
+    </section>
+
+    <section class="next" id="next">
+      <h2>The timeline is now part of the project map</h2>
+      <p>This prototype contains the master outline's chronological content. It is designed for review in Safari and for testing how readers move through time before anything is implemented or published on Couch Commons.</p>
+      <div class="next-links"><a href="MASTER-CONTENT-OUTLINE.html">Review the master outline</a><a href="OUTLINE-OF-THE-OUTLINE.html">Review the method</a><a href="EVIDENCE-MODEL.html">Review the evidence model</a><a href="SCOPE-MAP.html">Review the scope</a></div>
+    </section>
+  </main>
+
+  <footer class="wrap">Couch Commons · History of the Mind and Mental Health · Local timeline prototype · Not implemented or published</footer>
+  <script src="timeline/TIMELINE-DATA.js"></script>
+  <script>
+    (() => {
+      "use strict";
+      const data = window.HISTORY_TIMELINE_DATA;
+      const allTopics = data.bands.flatMap(band => band.topics.map(topic => ({...topic, band})));
+      const sources = data.sources;
+      const validHash = location.hash.replace("#", "");
+      const state = { band: data.bands.some(b => b.id === validHash) || validHash === "ALL" ? validHash : "T00", query: "", theme: "All", region: "All" };
+      const els = {
+        rail: document.querySelector("#eraRail"), head: document.querySelector("#eraHead"), results: document.querySelector("#topicResults"),
+        count: document.querySelector("#resultCount"), search: document.querySelector("#search"), theme: document.querySelector("#theme"),
+        region: document.querySelector("#region"), clear: document.querySelector("#clear"), topicTotal: document.querySelector("#topicTotal"), bandTotal: document.querySelector("#bandTotal")
+      };
+
+      const esc = value => String(value).replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+      const sourceLinks = keys => (keys || []).filter(key => sources[key]).map(key => `<li><a href="${esc(sources[key].url)}" target="_blank" rel="noopener">${esc(sources[key].label)}</a></li>`).join("");
+      const unique = values => [...new Set(values)].sort((a,b) => a.localeCompare(b));
+
+      function fillSelect(select, values) {
+        values.forEach(value => select.insertAdjacentHTML("beforeend", `<option value="${esc(value)}">${esc(value)}</option>`));
+      }
+
+      function renderRail() {
+        const buttons = [{ id:"ALL", short:"All time bands", dates:`${allTopics.length} topic doors`, color:"#c6f24e" }, ...data.bands];
+        els.rail.innerHTML = buttons.map(band => `<button class="era-button ${band.id === "ALL" ? "all" : ""}" type="button" data-band="${band.id}" aria-pressed="${state.band === band.id}" style="--band-color:${band.color}"><span class="era-id">${band.id === "ALL" ? "OVERVIEW" : band.id}</span><strong>${esc(band.short)}</strong><small>${esc(band.dates)}</small></button>`).join("");
+        els.rail.querySelectorAll("button").forEach(button => button.addEventListener("click", () => {
+          state.band = button.dataset.band;
+          history.replaceState(null, "", `#${state.band}`);
+          render();
+          document.querySelector("#timeline-title").scrollIntoView({block:"start"});
+        }));
+      }
+
+      function renderHead() {
+        if (state.band === "ALL") {
+          els.head.innerHTML = `<article class="era-head" style="--accent:#c6f24e"><div><span class="era-label">Overview · all bands</span><h2>The whole mapped journey</h2><div class="dates">Deep prehistory → the contested present</div></div><div><p class="era-job">Explore every mapped topic, or narrow the view by theme, place, or a phrase people actually search for.</p><div class="caution">${esc(data.meta.scaleNote)} ${esc(data.meta.stateNote)}</div></div></article>`;
+          return;
+        }
+        const band = data.bands.find(item => item.id === state.band);
+        document.documentElement.style.setProperty("--accent", band.color);
+        els.head.innerHTML = `<article class="era-head"><div><span class="era-label">${band.id} · ${esc(band.kicker)}</span><h2>${esc(band.short)}</h2><div class="dates">${esc(band.dates)}</div></div><div><p class="era-job">${esc(band.job)}</p><div class="caution"><strong>Keep this honest:</strong> ${esc(band.caution)}</div>${band.sources.length ? `<details class="era-sources"><summary>${band.sources.length} citation anchors for this band</summary><ul>${sourceLinks(band.sources)}</ul></details>` : ""}</div></article>`;
+      }
+
+      function filteredTopics() {
+        const query = state.query.trim().toLocaleLowerCase();
+        return allTopics.filter(item => {
+          const inBand = state.band === "ALL" || item.band.id === state.band;
+          const inTheme = state.theme === "All" || item.themes.includes(state.theme);
+          const inRegion = state.region === "All" || item.regions.includes(state.region) || item.band.regions.includes(state.region);
+          const haystack = [item.title,item.summary,item.band.short,item.band.dates,...item.themes,...item.regions].join(" ").toLocaleLowerCase();
+          return inBand && inTheme && inRegion && (!query || haystack.includes(query));
+        });
+      }
+
+      function topicCard(item) {
+        const citations = sourceLinks(item.sources);
+        return `<article class="card" id="${item.id}"><div class="card-top"><span class="topic-id">${item.id}</span><span class="state">Mapped</span></div><h3>${esc(item.title)}</h3><p>${esc(item.summary)}</p><div class="chips">${item.regions.map(value => `<span class="chip region">${esc(value)}</span>`).join("")}${item.themes.map(value => `<span class="chip theme">${esc(value)}</span>`).join("")}</div>${citations ? `<details class="citations"><summary>${item.sources.length} citation anchor${item.sources.length === 1 ? "" : "s"}</summary><ul>${citations}</ul></details>` : ""}</article>`;
+      }
+
+      function renderTopics() {
+        const matches = filteredTopics();
+        els.count.textContent = `${matches.length} of ${allTopics.length} mapped topics shown`;
+        if (!matches.length) {
+          els.results.innerHTML = `<div class="empty"><h3>No mapped topic matches yet</h3><p>Try a broader word, another place, or clear the filters. An empty result is not evidence that the history does not exist.</p></div>`;
+          return;
+        }
+        const bandIds = state.band === "ALL" ? data.bands.map(b => b.id) : [state.band];
+        els.results.innerHTML = bandIds.map(id => {
+          const band = data.bands.find(b => b.id === id);
+          const items = matches.filter(item => item.band.id === id);
+          if (!items.length) return "";
+          return `<section class="group" aria-labelledby="group-${id}">${state.band === "ALL" ? `<div class="group-title"><span>${id}</span><h3 id="group-${id}">${esc(band.short)}</h3></div>` : ""}<div class="cards">${items.map(topicCard).join("")}</div></section>`;
+        }).join("");
+      }
+
+      function render() {
+        renderRail(); renderHead(); renderTopics();
+      }
+
+      fillSelect(els.theme, unique(allTopics.flatMap(item => item.themes)));
+      fillSelect(els.region, unique(allTopics.flatMap(item => [...item.regions, ...item.band.regions])));
+      els.topicTotal.textContent = allTopics.length;
+      els.bandTotal.textContent = data.bands.length;
+      function openWholeTimelineForFilter() {
+        if (state.band !== "ALL") {
+          state.band = "ALL";
+          history.replaceState(null, "", "#ALL");
+        }
+        render();
+      }
+      els.search.addEventListener("input", event => { state.query = event.target.value; event.target.value.trim() ? openWholeTimelineForFilter() : renderTopics(); });
+      els.theme.addEventListener("change", event => { state.theme = event.target.value; event.target.value !== "All" ? openWholeTimelineForFilter() : renderTopics(); });
+      els.region.addEventListener("change", event => { state.region = event.target.value; event.target.value !== "All" ? openWholeTimelineForFilter() : renderTopics(); });
+      els.clear.addEventListener("click", () => { state.query=""; state.theme="All"; state.region="All"; els.search.value=""; els.theme.value="All"; els.region.value="All"; renderTopics(); els.search.focus(); });
+      addEventListener("hashchange", () => { const next=location.hash.replace("#",""); if (next === "ALL" || data.bands.some(b => b.id === next)) { state.band=next; render(); } });
+      render();
+    })();
+  </script>
+</body>
+</html>

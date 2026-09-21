@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Era Research Execution Plan — History of the Mind</title>
+  <style>
+:root {
+  --bg: #fafafc; --surface: #ffffff; --fg: #18182b; --fg-muted: #65657a;
+  --border: #d8d8e4; --accent: #4338ca;
+  --sans: "Hanken Grotesk", Inter, system-ui, -apple-system, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, monospace;
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px;
+  --s5: 20px; --s6: 24px; --s7: 32px; --s8: 48px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #18182b; --surface: #1f1f36; --fg: #f0f0f8; --fg-muted: #8888a8;
+    --border: #2a2a44; --accent: #7c6ff0;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  font-family: var(--sans); background: var(--bg); color: var(--fg);
+  padding: var(--s7); line-height: 1.5; margin: 0;
+}
+.visual-diagram {
+  margin: 0; padding: var(--s5);
+  background: var(--surface); border-radius: 8px;
+  border: 1px solid var(--border); overflow-x: auto;
+}
+.visual-label {
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  color: var(--fg-muted); letter-spacing: 0.06em;
+  margin-bottom: var(--s4); text-transform: uppercase;
+}
+.sitemap-tabbar {
+  display: flex; align-items: center; justify-content: space-around;
+  padding: var(--s2) var(--s3);
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 8px; margin-bottom: var(--s4);
+}
+.sitemap-tab {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 2px; font-size: 10px; color: var(--fg-muted);
+  padding: var(--s1) var(--s2);
+}
+.sitemap-tab svg { color: var(--fg-muted); }
+.sitemap-tab-active { color: var(--accent); }
+.sitemap-tab-active svg { color: var(--accent); }
+.sitemap-tab-post {
+  background: var(--accent); border-radius: 50%;
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center; padding: 0;
+}
+.sitemap-tab-post svg { color: white; }
+.sitemap-tree { padding: var(--s2) 0; }
+.sitemap-root { margin-bottom: var(--s3); }
+.sitemap-root .sitemap-node-label {
+  font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--fg);
+}
+.sitemap-branches { display: flex; gap: var(--s2); flex-wrap: wrap; }
+.sitemap-branch { flex: 1; min-width: 85px; }
+.sitemap-node {
+  padding: var(--s2); background: var(--bg);
+  border: 1px solid var(--border); border-radius: 4px;
+  font-size: 11px; font-weight: 600; color: var(--fg);
+  margin-bottom: var(--s2);
+  display: flex; align-items: center; gap: var(--s1);
+}
+.sitemap-node-primary { border-color: var(--accent); border-width: 2px; }
+.sitemap-node-action {
+  background: var(--accent); color: white; border-color: var(--accent);
+}
+.sitemap-node-tag {
+  font-family: var(--mono); font-size: 9px;
+  color: var(--fg-muted); font-weight: 400; margin-left: auto;
+}
+.sitemap-node-action .sitemap-node-tag { color: rgba(255,255,255,0.7); }
+.sitemap-children {
+  padding-left: var(--s3); border-left: 1px dashed var(--border);
+}
+.sitemap-leaf {
+  font-size: 10.5px; color: var(--fg-muted);
+  padding: 2px 0; line-height: 1.4;
+}
+    :root{--acid:#c6f24e;--rust:#a9452d;--blue:#315a76;--paper:#f2efe5;--ink:#11110f;--card:#fffdf7;--rule:#c9c1b3}
+    body{padding:0;background:linear-gradient(rgba(17,17,15,.035) 1px,transparent 1px),var(--paper);background-size:100% 28px;color:var(--ink)}
+    a{color:inherit;text-underline-offset:3px} a:focus-visible,summary:focus-visible{outline:4px solid var(--blue);outline-offset:4px}
+    .wrap{width:min(1180px,calc(100% - 32px));margin:0 auto}.mast{background:var(--ink);color:#fff;border-bottom:12px solid var(--acid)}
+    .top{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:24px 0}.brand,.status,.eyebrow,.kicker{font-weight:950;letter-spacing:.1em;text-transform:uppercase}
+    .brand,.status{font-size:.78rem}.status{border:1px solid #fff;padding:7px 10px}.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:52px;align-items:end;padding:74px 0 70px}
+    .eyebrow{font-size:.82rem;color:var(--acid)}h1,h2,h3{line-height:1;letter-spacing:-.04em}h1{font-size:clamp(3.2rem,8.5vw,7.4rem);text-transform:uppercase;margin:18px 0 20px}.hero p{font-size:clamp(1.05rem,2vw,1.35rem);color:#dfddd5;max-width:760px;margin:0}.hero-rule{border-left:7px solid var(--acid);padding:20px;font-size:1.05rem}
+    .jump{position:sticky;top:0;z-index:4;background:rgba(242,239,229,.96);border-bottom:2px solid var(--ink);backdrop-filter:blur(8px)}.jump .wrap{display:flex;gap:18px;padding:13px 0;overflow:auto;white-space:nowrap}.jump a{font-size:.76rem;font-weight:900;text-transform:uppercase}
+    main{padding:68px 0 100px}.section{margin-bottom:84px}.title{font-size:clamp(2.4rem,6vw,5rem);text-transform:uppercase;margin:0 0 24px}.lead{font-family:Georgia,serif;font-size:clamp(1.2rem,2.3vw,1.58rem);max-width:900px}.rulebox{background:var(--acid);border:4px solid var(--ink);box-shadow:7px 7px 0 var(--ink);padding:28px;margin:30px 0;font-size:1.2rem;font-weight:850}
+    .layers{display:grid;grid-template-columns:1fr 1fr;gap:16px}.layer{background:var(--card);border:3px solid var(--ink);padding:28px}.layer strong{display:block;color:var(--rust);font:950 1rem var(--mono);margin-bottom:12px}.layer h3{font-size:1.8rem;text-transform:uppercase;margin:0 0 12px}.layer p{margin:0;color:#625d54}
+    .visual-diagram{border:3px solid var(--ink);border-radius:0;box-shadow:6px 6px 0 var(--ink);background:var(--card)}.visual-label{color:var(--rust)}.sitemap-node{border-color:var(--ink);background:var(--paper)}.sitemap-node-primary{border-color:var(--rust)}.sitemap-node-action{background:var(--ink);border-color:var(--ink)}.sitemap-children{border-color:var(--rule)}.sitemap-leaf{color:#625d54}
+    .workflow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:24px}.step{position:relative;padding:18px;border:2px solid var(--ink);background:var(--card);min-height:130px}.step:not(:last-child):after{content:"→";position:absolute;right:-14px;top:42%;z-index:2;background:var(--acid);border:2px solid var(--ink);width:28px;height:28px;text-align:center;font-weight:950}.step span{font:900 .75rem var(--mono);color:var(--rust)}.step strong{display:block;margin:12px 0 6px;text-transform:uppercase}.step p{margin:0;color:#625d54;font-size:.88rem}
+    .waves{border-top:3px solid var(--ink)}details{border-bottom:2px solid var(--ink);background:rgba(255,253,247,.7)}details[open]{background:var(--card)}summary{cursor:pointer;display:grid;grid-template-columns:78px 1fr auto;gap:16px;align-items:center;padding:22px 16px;list-style:none}summary::-webkit-details-marker{display:none}.wave-id{font:950 1rem var(--mono);color:var(--rust)}.wave-title{font-weight:950;text-transform:uppercase;font-size:clamp(1.15rem,2.5vw,1.8rem)}.wave-focus{font-size:.82rem;color:#625d54;font-weight:800}.packets{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:0 16px 24px}.packet{padding:18px;border:2px solid var(--ink);background:var(--paper)}.packet b{display:block;font:950 .8rem var(--mono);color:var(--rust)}.packet strong{display:block;margin:8px 0}.packet small{color:#625d54}.decision{grid-column:1/-1;padding:17px;background:var(--acid);border:2px solid var(--ink);font-weight:800}
+    .contract{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;counter-reset:item}.contract article{counter-increment:item;background:var(--card);border:2px solid var(--ink);padding:20px}.contract article:before{content:counter(item,decimal-leading-zero);font:950 .9rem var(--mono);color:var(--rust)}.contract h3{margin:10px 0 8px;text-transform:uppercase;font-size:1.1rem}.contract p{margin:0;color:#625d54}
+    .gates{display:grid;grid-template-columns:1fr 1fr;gap:18px}.gate{border:3px solid var(--ink);padding:28px;background:var(--card)}.gate:first-child{background:#e5edf1}.gate h3{font-size:1.7rem;text-transform:uppercase;margin-top:0}.gate li{margin-bottom:9px}.stop{background:var(--ink);color:#fff;padding:clamp(30px,6vw,60px);border:10px solid var(--acid)}.stop h2{font-size:clamp(2.5rem,6vw,5rem);text-transform:uppercase;margin:0 0 24px}.stop p{font-size:1.15rem;max-width:900px}.stop strong{color:var(--acid)}footer{padding:36px 0 50px;color:#625d54;font-size:.88rem}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}.workflow{grid-template-columns:1fr}.step:not(:last-child):after{content:"↓";right:auto;left:48%;top:auto;bottom:-16px}.layers,.packets,.contract,.gates{grid-template-columns:1fr}summary{grid-template-columns:62px 1fr}.wave-focus{grid-column:2}}
+    @media(max-width:560px){.wrap{width:min(100% - 22px,1180px)}.top{flex-direction:column;align-items:flex-start}.hero{padding:48px 0}h1{font-size:3.3rem}.sitemap-branches{display:grid;grid-template-columns:1fr 1fr}}
+    @media(print){.jump{display:none}details>.packets{display:grid!important}.rulebox,.visual-diagram{box-shadow:none}body{background:#fff}}
+  </style>
+</head>
+<body>
+  <header class="mast">
+    <div class="wrap">
+      <div class="top"><div class="brand">Couch Commons · History Project</div><div class="status">Execution plan · not public copy</div></div>
+      <div class="hero">
+        <div><div class="eyebrow">How we go big without drifting</div><h1>Research history in small pieces</h1><p>Forty-two era sections, split again wherever region or archive demands it. Batches of six researchers plus one coordinator. Research first, reconcile the seams second, write third.</p></div>
+        <div class="hero-rule"><strong>The anti-fuck-up rule</strong><br>No session receives “research the history of mental health from year one to today.”</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="jump" aria-label="Plan sections"><div class="wrap"><a href="#ruling">Ruling</a><a href="#model">Parallel model</a><a href="#waves">Seven waves</a><a href="#contract">Packet contract</a><a href="#gates">Gates</a><a href="#start">Start</a></div></nav>
+
+  <main class="wrap">
+    <section class="section" id="ruling">
+      <h2 class="title">Two maps, two jobs</h2>
+      <p class="lead">The public needs a timeline it can understand. Researchers need assignments small enough to investigate without substituting memory, shortcuts, or a Western default.</p>
+      <div class="layers">
+        <article class="layer"><strong>T00–T10</strong><h3>Reader navigation</h3><p>Eleven overlapping global bands help people browse the public story. They are broad by design and remain mapped.</p></article>
+        <article class="layer"><strong>R01–R42</strong><h3>Research section map</h3><p>Forty-two smaller lanes. Any lane spanning several regions, languages, or archives splits again before a researcher receives it.</p></article>
+      </div>
+      <div class="rulebox">Research first. Reconcile the seams second. Write third. A long date range is an orientation aid—not permission for one session to freestyle across centuries.</div>
+    </section>
+
+    <section class="section" id="model">
+      <h2 class="title">One batch at a time</h2>
+      <div class="visual-diagram">
+        <div class="visual-label">Parallel information architecture: one coordinator + six owned packet folders</div>
+        <div class="sitemap-tree">
+          <div class="sitemap-root"><span class="sitemap-node-label">PROJECT BRAIN + PACKET INDEX</span></div>
+          <div class="sitemap-branches">
+            <div class="sitemap-branch"><div class="sitemap-node sitemap-node-action">Coordinator<span class="sitemap-node-tag">truth files</span></div><div class="sitemap-children"><div class="sitemap-leaf">Freeze briefs</div><div class="sitemap-leaf">Audit seams</div><div class="sitemap-leaf">Record states</div></div></div>
+            <div class="sitemap-branch"><div class="sitemap-node sitemap-node-primary">Researcher 1<span class="sitemap-node-tag">Rxx</span></div><div class="sitemap-children"><div class="sitemap-leaf">One folder</div><div class="sitemap-leaf">No public prose</div></div></div>
+            <div class="sitemap-branch"><div class="sitemap-node sitemap-node-primary">Researcher 2<span class="sitemap-node-tag">Rxx</span></div><div class="sitemap-children"><div class="sitemap-leaf">One folder</div><div class="sitemap-leaf">No master edits</div></div></div>
+            <div class="sitemap-branch"><div class="sitemap-node sitemap-node-primary">Researcher 3<span class="sitemap-node-tag">Rxx</span></div><div class="sitemap-children"><div class="sitemap-leaf">One folder</div><div class="sitemap-leaf">Evidence labels</div></div></div>
+            <div class="sitemap-branch"><div class="sitemap-node sitemap-node-primary">Researcher 4<span class="sitemap-node-tag">Rxx</span></div><div class="sitemap-children"><div class="sitemap-leaf">One folder</div><div class="sitemap-leaf">Lived experience</div></div></div>
+            <div class="sitemap-branch"><div class="sitemap-node sitemap-node-primary">Researcher 5<span class="sitemap-node-tag">Rxx</span></div><div class="sitemap-children"><div class="sitemap-leaf">One folder</div><div class="sitemap-leaf">Terms + translation</div></div></div>
+            <div class="sitemap-branch"><div class="sitemap-node sitemap-node-primary">Researcher 6<span class="sitemap-node-tag">Rxx</span></div><div class="sitemap-children"><div class="sitemap-leaf">One folder</div><div class="sitemap-leaf">Gaps + handoffs</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="workflow">
+        <article class="step"><span>01</span><strong>Freeze six briefs</strong><p>Dates, places, questions, exclusions, and neighbors are explicit.</p></article>
+        <article class="step"><span>02</span><strong>Research in parallel</strong><p>Six sessions own six non-overlapping packet folders.</p></article>
+        <article class="step"><span>03</span><strong>Cross-review</strong><p>Researchers rotate; nobody is their own final checker.</p></article>
+        <article class="step"><span>04</span><strong>Synthesize seams</strong><p>The coordinator finds conflicts, gaps, duplication, and false connections.</p></article>
+        <article class="step"><span>05</span><strong>Open next wave</strong><p>Exact states and inherited questions are recorded before proceeding.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="waves">
+      <h2 class="title">Seven waves · 42 sections</h2>
+      <p class="lead">Open each planning wave. Every card is a research lane, not a final headline and not automatically one session. Multi-region lanes split into suffixed packets at brief freeze.</p>
+      <div class="waves">
+        <details open><summary><span class="wave-id">W01</span><span class="wave-title">Evidence before and beside the first archives</span><span class="wave-focus">R01–R06</span></summary><div class="packets">
+          <article class="packet"><b>R01</b><strong>Material lives before writing</strong><small>Deep prehistory → local archives · bodies, disability, care, limits of inference</small></article>
+          <article class="packet"><b>R02</b><strong>Mesopotamian signs and suffering</strong><small>c. 3200–500 BCE · healing, households, literary voice</small></article>
+          <article class="packet"><b>R03</b><strong>Egypt, Nile worlds, Nubia, Kush</strong><small>c. 3000 BCE–600 CE · heart, brain, body, family, archive</small></article>
+          <article class="packet"><b>R04</b><strong>Levantine and Iranian embodied selves</strong><small>c. 1200 BCE–600 CE · breath, spirit, law, distress</small></article>
+          <article class="packet"><b>R05</b><strong>Greek and Roman plural worlds</strong><small>c. 800 BCE–600 CE · soul, regimen, sanctuary, household, law</small></article>
+          <article class="packet"><b>R06</b><strong>South Asian classical worlds</strong><small>c. 1000 BCE–600 CE · selves, suffering, medicine, cultivation</small></article>
+          <div class="decision">Wave decision: What can the evidence support, and where must we say “unknown”?</div>
+        </div></details>
+        <details><summary><span class="wave-id">W02</span><span class="wave-title">Classical and translation networks</span><span class="wave-focus">R07–R12</span></summary><div class="packets">
+          <article class="packet"><b>R07</b><strong>Early Chinese heart-mind and plural care</strong><small>c. 800 BCE–600 CE</small></article>
+          <article class="packet"><b>R08</b><strong>Late-antique inner lives and care</strong><small>c. 200–800 CE · Jewish, Christian, Byzantine, ascetic</small></article>
+          <article class="packet"><b>R09</b><strong>Greek–Syriac–Arabic translation networks</strong><small>c. 500–1000 CE</small></article>
+          <article class="packet"><b>R10</b><strong>Arabic and Persian sciences of the soul</strong><small>c. 750–1400 CE</small></article>
+          <article class="packet"><b>R11</b><strong>Bimaristans, households, shrines, and law</strong><small>c. 750–1500 CE</small></article>
+          <article class="packet"><b>R12</b><strong>Buddhist medicine and mind across routes</strong><small>c. 100 BCE–1200 CE</small></article>
+          <div class="decision">Wave decision: Which similarities traveled, which developed in parallel, and what did translation change?</div>
+        </div></details>
+        <details><summary><span class="wave-id">W03</span><span class="wave-title">Regional syntheses and contact zones</span><span class="wave-focus">R13–R18</span></summary><div class="packets">
+          <article class="packet"><b>R13</b><strong>Asian regional syntheses after the classics</strong><small>c. 600–1700 CE</small></article>
+          <article class="packet"><b>R14</b><strong>African manuscript, oral, household, and healing worlds</strong><small>Local chronologies → c. 1800</small></article>
+          <article class="packet"><b>R15</b><strong>Medieval and early-modern European care</strong><small>c. 800–1650 CE · family, charity, law, religion, coercion</small></article>
+          <article class="packet"><b>R16</b><strong>Print, anatomy, melancholy, mechanism, self-writing</strong><small>c. 1450–1750 CE</small></article>
+          <article class="packet"><b>R17</b><strong>Indigenous American knowledge and care</strong><small>Local chronologies → present · protocol-governed evidence</small></article>
+          <article class="packet"><b>R18</b><strong>American conquest contact zones</strong><small>c. 1492–1750 CE</small></article>
+          <div class="decision">Wave decision: What is direct, what is colonially mediated, and what knowledge is not ours to reproduce?</div>
+        </div></details>
+        <details><summary><span class="wave-id">W04</span><span class="wave-title">Confinement, empire, professional authority</span><span class="wave-focus">R19–R24</span></summary><div class="packets">
+          <article class="packet"><b>R19</b><strong>Atlantic slavery, resistance, and healing</strong><small>c. 1450–1850 · Africa and Caribbean</small></article>
+          <article class="packet"><b>R20</b><strong>European and North Atlantic asylums</strong><small>c. 1650–1900 · reform, moral treatment, patient experience</small></article>
+          <article class="packet"><b>R21</b><strong>Colonial institutions in South and Southeast Asia</strong><small>c. 1750–1945</small></article>
+          <article class="packet"><b>R22</b><strong>Colonial institutions in Africa, Caribbean, Oceania</strong><small>c. 1800–1960</small></article>
+          <article class="packet"><b>R23</b><strong>Latin American institutions and nation-making</strong><small>c. 1750–1950</small></article>
+          <article class="packet"><b>R24</b><strong>Psychiatry professionalization</strong><small>c. 1800–1914 · institutions, workers, subjects, authority</small></article>
+          <div class="decision">Wave decision: For whom was an institution refuge, treatment, workplace, punishment, or abandonment?</div>
+        </div></details>
+        <details><summary><span class="wave-id">W05</span><span class="wave-title">Disciplines, care systems, removal, measurement</span><span class="wave-focus">R25–R30</span></summary><div class="packets">
+          <article class="packet"><b>R25</b><strong>Psychology, testing, schools, and work</strong><small>c. 1800–1945</small></article>
+          <article class="packet"><b>R26</b><strong>Social work, nursing, counseling, public health</strong><small>c. 1800–1945 · mutual aid and welfare included</small></article>
+          <article class="packet"><b>R27</b><strong>Psychoanalysis and psychotherapies as networks</strong><small>c. 1880–1945</small></article>
+          <article class="packet"><b>R28</b><strong>Indigenous removal and family rupture</strong><small>Jurisdiction-specific dates · testimony and sovereignty</small></article>
+          <article class="packet"><b>R29</b><strong>War, shell shock, trauma, rehabilitation</strong><small>c. 1850–1945</small></article>
+          <article class="packet"><b>R30</b><strong>Eugenics, sterilization, psychiatric murder</strong><small>c. 1880–1945 · survivors and resistance</small></article>
+          <div class="decision">Wave decision: How did expertise move into armies, schools, borders, welfare systems, and state violence?</div>
+        </div></details>
+        <details><summary><span class="wave-id">W06</span><span class="wave-title">Treatment, decolonization, diagnosis, rights</span><span class="wave-focus">R31–R36</span></summary><div class="packets">
+          <article class="packet"><b>R31</b><strong>Somatic treatments</strong><small>c. 1917–1970 · indication, hope, evidence, risk, consent</small></article>
+          <article class="packet"><b>R32</b><strong>Psychopharmacology</strong><small>c. 1930–2000 · benefit, harm, marketing, patient reports</small></article>
+          <article class="packet"><b>R33</b><strong>Decolonization and transcultural psychiatry</strong><small>c. 1945–1980 · Fanon and community experiments</small></article>
+          <article class="packet"><b>R34</b><strong>Deinstitutionalization and community care</strong><small>c. 1945–2000 · reform and abandonment</small></article>
+          <article class="packet"><b>R35</b><strong>DSM, ICD, PTSD, validity, culture</strong><small>c. 1945–2000</small></article>
+          <article class="packet"><b>R36</b><strong>Patient, survivor, disability, family, peer movements</strong><small>c. 1945–2000</small></article>
+          <div class="decision">Wave decision: Separate availability from effectiveness, reform from implementation, and reliability from validity.</div>
+        </div></details>
+        <details><summary><span class="wave-id">W07</span><span class="wave-title">Contested presents</span><span class="wave-focus">R37–R42</span></summary><div class="packets">
+          <article class="packet"><b>R37</b><strong>Neuroscience, imaging, genetics, and overreach</strong><small>c. 1945–present</small></article>
+          <article class="packet"><b>R38</b><strong>Addiction, commerce, crime, medicine, harm reduction</strong><small>c. 1800–present</small></article>
+          <article class="packet"><b>R39</b><strong>Global mental health, WHO, task-sharing, rights</strong><small>c. 1990–present</small></article>
+          <article class="packet"><b>R40</b><strong>Neurodiversity, Mad Pride, peer work</strong><small>c. 1990–present</small></article>
+          <article class="packet"><b>R41</b><strong>Internet, apps, platforms, data, and AI</strong><small>c. 1990–present</small></article>
+          <article class="packet"><b>R42</b><strong>Wellness, climate, displacement, and COVID-19</strong><small>c. 1900–present</small></article>
+          <div class="decision">Wave decision: Make the present historical; separate outcomes from marketing and access from surveillance.</div>
+        </div></details>
+      </div>
+    </section>
+
+    <section class="section" id="contract">
+      <h2 class="title">Every packet gets a contract</h2>
+      <div class="contract">
+        <article><h3>Question</h3><p>One evidence problem in one sentence.</p></article>
+        <article><h3>Dates</h3><p>Start, end, local rationale, and exceptions.</p></article>
+        <article><h3>Places</h3><p>Named geography; never a continent treated as one culture.</p></article>
+        <article><h3>In / out</h3><p>Frozen scope plus topics owned by neighboring packets.</p></article>
+        <article><h3>Evidence streams</h3><p>Primary, scholarly, lived, family, workers, institutions, absences.</p></article>
+        <article><h3>Terms</h3><p>Period vocabulary, languages, translations, modern search bridges.</p></article>
+        <article><h3>Claims to test</h3><p>Myths, “firsts,” diagnoses, disagreements, treatment claims.</p></article>
+        <article><h3>Connections</h3><p>Named routes and mechanisms—not resemblance alone.</p></article>
+        <article><h3>Current evidence</h3><p>Historical use and present effectiveness stay separate.</p></article>
+        <article><h3>Stop condition</h3><p>Files and checks complete; no public prose begins.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="gates">
+      <h2 class="title">Done means checked</h2>
+      <div class="gates">
+        <article class="gate"><h3>Packet gate</h3><ul><li>Consequential claims point to opened sources.</li><li>Primary evidence and interpretation are distinct.</li><li>Direct voice, mediated voice, and reconstruction are distinct.</li><li>Archive and language limits are visible.</li><li>Geography and dates stayed inside the brief.</li><li>A different researcher completed cross-review.</li></ul></article>
+        <article class="gate"><h3>Wave gate</h3><ul><li>Conflicting dates and interpretations are recorded.</li><li>Shared citation chains are detected.</li><li>Missing regions, voices, and kinds of care are identified.</li><li>Unsupported exchange claims are removed.</li><li>Duplicate page ideas are consolidated.</li><li>The next wave receives explicit inherited questions.</li></ul></article>
+      </div>
+    </section>
+
+    <section class="stop" id="start">
+      <h2>Start with six narrow packets</h2>
+      <p>The safest calibration batch is R01, R02, R03-Egypt, R03-Nubia-Kush, R04, and R05-Greek. R05-Roman and R06 wait for the next batch. This tests archaeology without mind-reading, early texts without retrospective diagnosis, uneven archives, multiple types of care, and several local chronologies.</p>
+      <p><strong>After those six packets, we improve the template before opening the next batch.</strong> We do not create 42 empty folders, and we do not draft public articles yet.</p>
+    </section>
+  </main>
+
+  <footer><div class="wrap">Local planning artifact · Aug. 18, 2026 · Proposed, not drafted, implemented, published, or verified live.</div></footer>
+</body>
+</html>

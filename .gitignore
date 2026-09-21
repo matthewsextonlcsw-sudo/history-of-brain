@@ -1,0 +1,5 @@
+# OS
+.DS_Store
+
+# Rights-sensitive primary-source cache (lives on cold archive; protect if copied back)
+history-of-brain/research/source-cache/

@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>History of the Mind — How We Will Build the Outline</title>
+  <style>
+    :root {
+      --ink: #11110f;
+      --paper: #f2efe5;
+      --card: #fffdf7;
+      --acid: #c6f24e;
+      --rust: #a9452d;
+      --blue: #315a76;
+      --muted: #665f55;
+      --rule: #c8c0b2;
+      --shadow: 7px 7px 0 #11110f;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(17,17,15,.035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 100% 28px;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+    a { color: inherit; text-underline-offset: 3px; }
+    a:focus-visible { outline: 4px solid var(--blue); outline-offset: 4px; }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    header {
+      background: var(--ink);
+      color: #fff;
+      padding: 24px 0 76px;
+      border-bottom: 12px solid var(--acid);
+    }
+    nav { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+    .brand { font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .status {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 7px 11px;
+      border: 1px solid #fff;
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .status::before { content: ""; width: 9px; height: 9px; background: var(--acid); border-radius: 50%; }
+    .hero { padding-top: 72px; display: grid; grid-template-columns: 1.4fr .6fr; gap: 48px; align-items: end; }
+    .eyebrow { color: var(--acid); font-size: .82rem; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; }
+    h1, h2, h3 { line-height: .98; letter-spacing: -.035em; }
+    h1 { margin: 16px 0 22px; max-width: 850px; font-size: clamp(3.2rem, 9vw, 7.8rem); text-transform: uppercase; }
+    .hero p { max-width: 720px; margin: 0; font-size: clamp(1.05rem, 2vw, 1.35rem); color: #dedbd2; }
+    .hero-note { border-left: 6px solid var(--acid); padding: 2px 0 2px 18px; font-size: .95rem; color: #fff; }
+    main { padding: 72px 0 100px; }
+    .intro { display: grid; grid-template-columns: .72fr 1.28fr; gap: 44px; margin-bottom: 72px; align-items: start; }
+    .intro h2, .section-title { margin: 0; font-size: clamp(2.2rem, 5vw, 4.5rem); text-transform: uppercase; }
+    .lead { margin: 0; font-family: Georgia, serif; font-size: clamp(1.18rem, 2.3vw, 1.55rem); }
+    .rule-box {
+      margin-top: 25px;
+      padding: 20px;
+      background: var(--acid);
+      border: 3px solid var(--ink);
+      font-weight: 850;
+      box-shadow: 5px 5px 0 var(--ink);
+    }
+    .map {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 3px solid var(--ink);
+      border-left: 3px solid var(--ink);
+      margin: 28px 0 80px;
+    }
+    .map article {
+      min-height: 225px;
+      padding: 24px;
+      background: rgba(255,253,247,.78);
+      border-right: 3px solid var(--ink);
+      border-bottom: 3px solid var(--ink);
+    }
+    .map .n { display: block; color: var(--rust); font-size: 2rem; font-weight: 950; }
+    .map h3 { margin: 18px 0 10px; font-size: 1.4rem; text-transform: uppercase; }
+    .map p { margin: 0; color: var(--muted); }
+    .pass { margin: 0 0 34px; display: grid; grid-template-columns: 100px 1fr; gap: 25px; align-items: start; }
+    .pass-number {
+      position: sticky;
+      top: 18px;
+      display: grid;
+      place-items: center;
+      width: 80px;
+      aspect-ratio: 1;
+      background: var(--ink);
+      color: var(--acid);
+      font-size: 2rem;
+      font-weight: 950;
+      border-radius: 50%;
+    }
+    .pass-body { padding: 30px; background: var(--card); border: 3px solid var(--ink); box-shadow: var(--shadow); }
+    .pass h3 { margin: 0 0 10px; font-size: clamp(1.55rem, 3vw, 2.4rem); }
+    .pass .question { color: var(--rust); font-weight: 850; }
+    .outputs { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px; }
+    .chip { padding: 7px 10px; border: 2px solid var(--ink); background: var(--paper); font-size: .82rem; font-weight: 800; }
+    .gate { margin-top: 18px; padding: 14px 16px; border-left: 7px solid var(--blue); background: #e6edf1; }
+    .matrix {
+      overflow-x: auto;
+      margin: 28px 0 72px;
+      border: 3px solid var(--ink);
+      box-shadow: var(--shadow);
+    }
+    table { width: 100%; border-collapse: collapse; min-width: 800px; background: var(--card); }
+    th, td { padding: 15px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); border-right: 1px solid var(--rule); }
+    th { background: var(--ink); color: #fff; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; }
+    tr:last-child td { border-bottom: 0; }
+    td:last-child, th:last-child { border-right: 0; }
+    .evidence-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 28px 0 72px; }
+    .evidence-grid div { padding: 18px; border: 2px solid var(--ink); background: var(--card); }
+    .evidence-grid strong { display: block; margin-bottom: 8px; }
+    .ready {
+      margin-top: 72px;
+      padding: clamp(30px, 6vw, 70px);
+      color: #fff;
+      background: var(--ink);
+      border: 8px solid var(--acid);
+    }
+    .ready h2 { color: var(--acid); margin: 0 0 22px; font-size: clamp(2.2rem, 5vw, 4rem); text-transform: uppercase; }
+    .ready ol { margin: 0; padding-left: 24px; columns: 2; column-gap: 56px; }
+    .ready li { margin: 0 0 14px; break-inside: avoid; }
+    footer { padding: 30px 0 50px; color: var(--muted); font-size: .88rem; }
+    @media (max-width: 820px) {
+      .hero, .intro { grid-template-columns: 1fr; }
+      .map { grid-template-columns: 1fr 1fr; }
+      .evidence-grid { grid-template-columns: 1fr 1fr; }
+      .ready ol { columns: 1; }
+    }
+    @media (max-width: 540px) {
+      .wrap { width: min(100% - 22px, 1120px); }
+      header { padding-bottom: 52px; }
+      nav { align-items: flex-start; flex-direction: column; }
+      .hero { padding-top: 48px; }
+      h1 { font-size: 3.15rem; }
+      .map { grid-template-columns: 1fr; }
+      .pass { grid-template-columns: 1fr; }
+      .pass-number { position: static; width: 62px; }
+      .pass-body { padding: 22px; box-shadow: 4px 4px 0 var(--ink); }
+      .evidence-grid { grid-template-columns: 1fr; }
+    }
+    @media print {
+      body { background: #fff; }
+      header { padding: 24px 0; }
+      .hero { padding-top: 30px; }
+      .pass-number { position: static; }
+      .pass-body, .matrix { box-shadow: none; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Document identity">
+        <div class="brand">Couch Commons · History Project</div>
+        <div class="status">Method approved</div>
+      </nav>
+      <div class="hero">
+        <div>
+          <div class="eyebrow">Before we outline all of history</div>
+          <h1>How we will build the outline</h1>
+          <p>A staged method for finding the whole story without letting chronology, famous doctors, surviving Western records, or search keywords quietly become the whole story.</p>
+        </div>
+        <div class="hero-note"><strong>This is the method, not the content outline.</strong><br>Passes 1–10 have now produced the <a href="MASTER-CONTENT-OUTLINE.html">first actual outline for review</a>.</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <h2>The problem</h2>
+      <div>
+        <p class="lead">A single brainstormed table of contents would reproduce whatever its author remembers best. For this subject, that usually means Europe, famous men, medical institutions, and the last two centuries.</p>
+        <div class="rule-box">We will outline in separate passes, then force those passes to confront one another. Gaps must become visible before article drafting begins.</div>
+      </div>
+    </section>
+
+    <h2 class="section-title">Three structures, one history</h2>
+    <section class="map" aria-label="The three structures of the history">
+      <article><span class="n">01</span><h3>The backbone</h3><p>A chronological journey from prehistoric evidence to the present. It lets readers see change, continuity, collision, and rediscovery.</p></article>
+      <article><span class="n">02</span><h3>The lenses</h3><p>Recurring subjects such as emotion, distress, the brain, healing, disability, institutions, professions, power, and coping.</p></article>
+      <article><span class="n">03</span><h3>The entry doors</h3><p>Focused pages shaped around real questions, people, places, objects, events, controversies, and search language.</p></article>
+    </section>
+
+    <h2 class="section-title">The twelve-pass method</h2>
+
+    <section aria-label="Outline-building passes">
+      <article class="pass">
+        <div class="pass-number">1</div>
+        <div class="pass-body">
+          <h3>Set the map's edges</h3>
+          <p class="question">What belongs, what is adjacent, and what would make this project infinite?</p>
+          <p>Turn the approved mission into a scope test, a terminology policy, and a list of dangerous shortcuts. Define how we will treat modern diagnoses applied to historical people, prehistoric interpretation, spirituality, wellness, addiction, disability, and ordinary coping.</p>
+          <div class="outputs"><span class="chip">Scope test</span><span class="chip">Term rules</span><span class="chip">Exclusion log</span><span class="chip">Drift alarms</span></div>
+          <div class="gate"><strong>Gate:</strong> Two researchers using the rules should make roughly the same inclusion decision.</div>
+        </div>
+      </article>
+
+      <article class="pass">
+        <div class="pass-number">2</div>
+        <div class="pass-body">
+          <h3>Build the evidence model</h3>
+          <p class="question">What can each kind of evidence actually tell us?</p>
+          <p>Define source types, claim-level records, evidence labels, translation notes, archive gaps, disagreement handling, and the difference between a source produced by a patient and a source produced about one.</p>
+          <div class="outputs"><span class="chip">Source schema</span><span class="chip">Claim schema</span><span class="chip">Confidence labels</span><span class="chip">Citation rules</span></div>
+          <div class="gate"><strong>Gate:</strong> Every future claim has a place to record support, uncertainty, disagreement, and reuse.</div>
+        </div>
+      </article>
+
+      <article class="pass">
+        <div class="pass-number">3</div>
+        <div class="pass-body">
+          <h3>Sketch the chronological backbone</h3>
+          <p class="question">What major periods and transitions help a public reader travel through the story?</p>
+          <p>Create a deliberately provisional sequence from prehistory to today. Use overlapping ranges where regions change at different times. Avoid treating European labels such as “medieval” as universal world periods.</p>
+          <div class="outputs"><span class="chip">Period map</span><span class="chip">Turning points</span><span class="chip">Continuities</span><span class="chip">Date disputes</span></div>
+          <div class="gate"><strong>Gate:</strong> Every period label states where it applies and where it does not.</div>
+        </div>
+      </article>
+
+      <article class="pass">
+        <div class="pass-number">4</div>
+        <div class="pass-body">
+          <h3>Run the global coverage pass</h3>
+          <p class="question">Which regions, cultures, languages, and knowledge traditions disappear inside the first chronology?</p>
+          <p>Build a period-by-region matrix. Mark evidence-rich areas, evidence-poor areas, translation dependencies, contested boundaries, and regions needing specialist help. Empty cells are findings, not invitations to improvise.</p>
+          <div class="outputs"><span class="chip">Region matrix</span><span class="chip">Language needs</span><span class="chip">Specialist needs</span><span class="chip">Known gaps</span></div>
+          <div class="gate"><strong>Gate:</strong> No period can be called “global” while large omissions remain hidden.</div>
+        </div>
+      </article>
+
+      <article class="pass">
+        <div class="pass-number">5</div>
+        <div class="pass-body">
+          <h3>Run the thematic passes</h3>
+          <p class="question">What stories cross periods and borders but vanish in a chronology alone?</p>
+          <p>Trace recurring lenses separately: brain and body, mind and self, moods and emotions, distress and difference, healing and treatment, wellness and coping, caregiving, disability, institutions, professions, law, work, war, family, spirituality, and power.</p>
+          <div class="outputs"><span class="chip">Theme maps</span><span class="chip">Cross-era links</span><span class="chip">Competing ideas</span><span class="chip">Long arcs</span></div>
+          <div class="gate"><strong>Gate:</strong> Each theme earns inclusion through the scope test and has evidence beyond a single famous figure.</div>
+        </div>
+      </article>
+
+      <article class="pass">
+        <div class="pass-number">6</div>
+        <div class="pass-body">
+          <h3>Restore lived experience</h3>
+          <p class="question">What did systems feel like to the people inside them, and can we actually know?</p>
+          <p>Search for direct testimony, letters, oral histories, art, court records, patient publications, activism, family accounts, and material evidence. Where voices are missing, record who controlled the archive and what can only be inferred.</p>
+          <div class="outputs"><span class="chip">Voice inventory</span><span class="chip">Archive-power notes</span><span class="chip">Testimony map</span><span class="chip">Silence markers</span></div>
+          <div class="gate"><strong>Gate:</strong> Institutional records are never silently rewritten as patient experience.</div>
+        </div>
+      </article>
+
+      <article class="pass">
+        <div class="pass-number">7</div>
+        <div class="pass-body">
+          <h3>Map encounters, exchanges, and power</h3>
+          <p class="question">How did ideas travel, mix, get suppressed, or get renamed?</p>
+          <p>Trace trade, migration, translation, conquest, colonization, slavery, missionary activity, war, professional networks, and scientific exchange. Look for ideas later presented as isolated “discoveries” after moving between cultures.</p>
+          <div class="outputs"><span class="chip">Transmission routes</span><span class="chip">Translation chains</span><span class="chip">Power shifts</span><span class="chip">Attribution disputes</span></div>
+          <div class="gate"><strong>Gate:</strong> “Discovery” pages identify predecessors, exchanges, and people excluded from credit.</div>
+        </div>
+      </article>
+
+      <article class="pass">
+        <div class="pass-number">8</div>
+        <div class="pass-body">
+          <h3>Turn the map into page families</h3>
+          <p class="question">Which ideas need a broad guide, and which deserve focused explanations?</p>
+          <p>Convert the research map into authority pages and supporting pages. Define page jobs for periods, regions, people, ideas, treatments, objects, institutions, professions, controversies, and “How we know” evidence explainers.</p>
+          <div class="outputs"><span class="chip">Page inventory</span><span class="chip">Page jobs</span><span class="chip">Parent-child links</span><span class="chip">Duplicate test</span></div>
+          <div class="gate"><strong>Gate:</strong> Every proposed page has a distinct reader question and a non-duplicative job.</div>
+        </div>
+      </article>
+
+      <article class="pass">
+        <div class="pass-number">9</div>
+        <div class="pass-body">
+          <h3>Add reader language and search paths</h3>
+          <p class="question">How do real people ask for this history?</p>
+          <p>Research search language, related questions, terminology changes, common misconceptions, and conversational queries. Apply findings to titles, summaries, FAQs, definitions, and internal links without letting keyword demand rewrite the historical canon.</p>
+          <div class="outputs"><span class="chip">Query map</span><span class="chip">Question coverage</span><span class="chip">Terminology bridges</span><span class="chip">Link plan</span></div>
+          <div class="gate"><strong>Gate:</strong> No thin page exists only because a keyword exists.</div>
+        </div>
+      </article>
+
+      <article class="pass">
+        <div class="pass-number">10</div>
+        <div class="pass-body">
+          <h3>Stress-test the balance</h3>
+          <p class="question">What did our structure make too large, too small, too certain, or invisible?</p>
+          <p>Audit geographic balance, gender and power, professional dominance, patient voice, disability framing, colonial inheritance, present-day bias, evidence strength, and whether modern categories have been projected backward.</p>
+          <div class="outputs"><span class="chip">Bias audit</span><span class="chip">Coverage audit</span><span class="chip">Confidence audit</span><span class="chip">Revision list</span></div>
+          <div class="gate"><strong>Gate:</strong> Every imbalance is repaired, justified, or visibly logged as an evidence gap.</div>
+        </div>
+      </article>
+
+      <article class="pass">
+        <div class="pass-number">11</div>
+        <div class="pass-body">
+          <h3>Choose and build the pilot cluster</h3>
+          <p class="question">Can this system produce one page family that is accurate, engaging, humane, and useful?</p>
+          <p>Select a demanding early-history cluster. Research it fully, build the claim ledger, draft the pages, test the voice, plan visuals, and run every review gate. Use the pilot to expose missing fields and broken assumptions.</p>
+          <div class="outputs"><span class="chip">Pilot sources</span><span class="chip">Pilot drafts</span><span class="chip">Review record</span><span class="chip">Model changes</span></div>
+          <div class="gate"><strong>Gate:</strong> The pilot passes editorial review before the project scales or the application schema changes.</div>
+        </div>
+      </article>
+
+      <article class="pass">
+        <div class="pass-number">12</div>
+        <div class="pass-body">
+          <h3>Freeze version one of the master outline</h3>
+          <p class="question">Is the outline ready to govern years of research without pretending to be final forever?</p>
+          <p>Incorporate pilot lessons, assign stable identifiers, record dependencies, define research waves, and publish an approved outline snapshot. Later changes require dated decisions rather than silent reshuffling.</p>
+          <div class="outputs"><span class="chip">Master outline v1</span><span class="chip">Research waves</span><span class="chip">Dependency map</span><span class="chip">Decision log</span></div>
+          <div class="gate"><strong>Gate:</strong> Matthew explicitly approves the outline before bulk drafting begins.</div>
+        </div>
+      </article>
+    </section>
+
+    <h2 class="section-title">The global coverage matrix</h2>
+    <p class="lead">Every major period will be checked across the same evidence questions. The matrix will not demand equal word counts. It will stop missing evidence from masquerading as missing history.</p>
+    <div class="matrix" role="region" aria-label="Example global coverage matrix" tabindex="0">
+      <table>
+        <thead><tr><th>Region or tradition</th><th>Ideas of mind and self</th><th>Distress and difference</th><th>Healing and coping</th><th>Care and control</th><th>Surviving voices</th></tr></thead>
+        <tbody>
+          <tr><td>Region A</td><td>Beliefs, models, vocabulary</td><td>Descriptions and categories</td><td>Formal and everyday practices</td><td>Family, community, law, institutions</td><td>Direct, indirect, missing, disputed</td></tr>
+          <tr><td>Region B</td><td>What evidence permits</td><td>What changed over time</td><td>Who practiced and who received</td><td>Who held authority</td><td>Who controlled the record</td></tr>
+          <tr><td>Connection routes</td><td colspan="5">Translation · trade · migration · conquest · religion · science · professional networks · resistance</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="section-title">The evidence vocabulary</h2>
+    <section class="evidence-grid" aria-label="Evidence labels">
+      <div><strong>Documented</strong>Directly supported by appropriate primary evidence.</div>
+      <div><strong>Strongly supported</strong>Multiple strong sources or scholarly consensus.</div>
+      <div><strong>Plausible</strong>Permitted by evidence, but not established as fact.</div>
+      <div><strong>Disputed</strong>Credible experts materially disagree.</div>
+      <div><strong>Unknown</strong>The evidence cannot responsibly answer.</div>
+    </section>
+
+    <section class="ready">
+      <h2>What approval unlocks</h2>
+      <ol>
+        <li>Create the scope and terminology reference.</li>
+        <li>Design the source and claim ledgers.</li>
+        <li>Draft the first chronological backbone.</li>
+        <li>Build the global period-by-region matrix.</li>
+        <li>Identify specialist and translation needs.</li>
+        <li>Return with the first real master-outline review.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <strong>Couch Commons · History of the Mind and Mental Health</strong><br>
+    Local planning artifact · Method approved Aug 18, 2026 · First actual outline created · Not implemented · Not published
+  </footer>
+</body>
+</html>

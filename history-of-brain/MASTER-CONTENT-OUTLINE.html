@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>The Human Mind Through Time — Master Content Outline</title>
+  <style>
+    :root {
+      --ink:#11110f; --paper:#f2efe5; --card:#fffdf7; --acid:#c6f24e;
+      --rust:#a9452d; --blue:#315a76; --muted:#625d54; --rule:#c9c1b3;
+      --soft-blue:#e5edf1; --soft-rust:#f3e5df;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:linear-gradient(rgba(17,17,15,.035) 1px,transparent 1px),var(--paper);background-size:100% 28px;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+    a{color:inherit;text-underline-offset:3px} a:focus-visible,summary:focus-visible{outline:4px solid var(--blue);outline-offset:4px}
+    .wrap{width:min(1180px,calc(100% - 32px));margin:0 auto}.mast{color:#fff;background:var(--ink);border-bottom:12px solid var(--acid)}
+    .top{display:flex;justify-content:space-between;gap:20px;padding:24px 0;align-items:center}.brand{font-size:.8rem;font-weight:950;letter-spacing:.1em;text-transform:uppercase}
+    .status{display:inline-flex;gap:8px;align-items:center;border:1px solid #fff;padding:7px 10px;font-size:.75rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase}.status:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--acid)}
+    .hero{display:grid;grid-template-columns:1.4fr .6fr;gap:50px;align-items:end;padding:76px 0 74px}.eyebrow{color:var(--acid);font-size:.82rem;font-weight:950;letter-spacing:.16em;text-transform:uppercase}
+    h1,h2,h3{line-height:.98;letter-spacing:-.04em}h1{margin:18px 0 20px;max-width:900px;font-size:clamp(3.4rem,9vw,8rem);text-transform:uppercase}.hero p{margin:0;max-width:760px;color:#dfddd5;font-size:clamp(1.05rem,2vw,1.35rem)}
+    .hero-note{padding:18px 0 18px 20px;border-left:7px solid var(--acid);font-size:.94rem}.jump{position:sticky;top:0;z-index:10;background:rgba(242,239,229,.96);border-bottom:2px solid var(--ink);backdrop-filter:blur(8px)}
+    .jump .wrap{display:flex;gap:18px;padding:13px 0;overflow-x:auto;white-space:nowrap}.jump a{font-size:.78rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase}
+    main{padding:68px 0 100px}.intro{display:grid;grid-template-columns:.72fr 1.28fr;gap:46px;margin-bottom:72px}.title{margin:0;font-size:clamp(2.4rem,6vw,5rem);text-transform:uppercase}.lead{margin:0;font-family:Georgia,serif;font-size:clamp(1.18rem,2.3vw,1.55rem)}
+    .bright{margin-top:24px;padding:20px;background:var(--acid);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);font-weight:850}
+    .doors{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:30px 0 82px}.door{min-height:210px;padding:24px;background:var(--card);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink)}.door span{color:var(--rust);font-weight:950}.door h3{margin:24px 0 10px;font-size:1.55rem;text-transform:uppercase}.door p{margin:0;color:var(--muted)}
+    .map{margin:28px 0 82px;padding:clamp(24px,5vw,52px);color:#fff;background:var(--ink);border:8px solid var(--acid)}.map ul{margin:22px 0 0;padding-left:22px;columns:2;column-gap:50px}.map li{break-inside:avoid;margin:0 0 12px}.map strong{color:var(--acid)}
+    .eras{margin:30px 0 82px;border-top:3px solid var(--ink)}details.era{border-bottom:2px solid var(--ink);background:rgba(255,253,247,.5)}details.era[open]{background:var(--card)}summary{display:grid;grid-template-columns:85px 1fr auto;gap:20px;align-items:center;padding:24px 16px;cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}.era-id{color:var(--rust);font-size:1.15rem;font-weight:950}.era-title{font-size:clamp(1.25rem,3vw,2rem);font-weight:950;text-transform:uppercase}.era-date{color:var(--muted);font-weight:800}.era-body{display:grid;grid-template-columns:.7fr 1.3fr;gap:30px;padding:0 16px 30px}.era-body p{margin:0}.era-body ul{margin:0;padding-left:20px;columns:2;column-gap:30px}.era-body li{break-inside:avoid;margin-bottom:8px}.era-body a{font-weight:800}
+    .paths{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0 82px}.path{padding:22px;border:3px solid var(--ink);background:var(--card)}.path .id{color:var(--rust);font-weight:950}.path h3{margin:12px 0 9px;font-size:1.3rem;text-transform:uppercase}.path p{margin:0;color:var(--muted)}
+    .streams{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:30px 0 82px}.stream{padding:24px;background:var(--soft-blue);border:2px solid var(--ink)}.stream strong{display:block;margin-bottom:8px;text-transform:uppercase}.stream p{margin:0}
+    .routes{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 82px}.route{padding:11px 14px;border:2px solid var(--ink);background:var(--card);font-weight:850}.route.power{background:var(--soft-rust)}
+    .anatomy{counter-reset:step;margin:30px 0 82px;border-top:3px solid var(--ink)}.step{counter-increment:step;display:grid;grid-template-columns:72px 220px 1fr;gap:18px;padding:18px 0;border-bottom:2px solid var(--ink);align-items:baseline}.step:before{content:counter(step,decimal-leading-zero);color:var(--rust);font-size:1.4rem;font-weight:950}.step strong{text-transform:uppercase}.step span{color:var(--muted)}
+    .wave-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:30px 0 82px}.wave{padding:26px;border:3px solid var(--ink);background:var(--card);box-shadow:5px 5px 0 var(--ink)}.wave:first-child{background:var(--acid)}.wave h3{margin:0 0 15px;font-size:1.5rem;text-transform:uppercase}.wave ol,.wave p{margin-bottom:0}
+    .audit{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0 82px}.audit article{padding:28px;border:3px solid var(--ink)}.audit article:first-child{background:var(--soft-blue)}.audit article:last-child{background:var(--soft-rust)}.audit h3{margin-top:0;text-transform:uppercase}.audit li{margin-bottom:9px}.refs{columns:2;column-gap:48px;margin:28px 0 82px;padding:28px 28px 16px 50px;background:var(--card);border:3px solid var(--ink)}.refs li{break-inside:avoid;margin-bottom:12px}
+    .gate{padding:clamp(30px,6vw,68px);background:var(--acid);border:5px solid var(--ink);box-shadow:9px 9px 0 var(--ink)}.gate h2{margin:0 0 24px;font-size:clamp(2.5rem,6vw,5rem);text-transform:uppercase}.gate p{max-width:850px;font-size:1.1rem}.gate code{padding:2px 5px;background:#e8e3d8;font-weight:800}.small{font-size:.88rem;color:var(--muted)}footer{padding:34px 0 48px;color:var(--muted);font-size:.88rem}
+    @media(max-width:900px){.hero,.intro,.era-body{grid-template-columns:1fr}.doors{grid-template-columns:1fr 1fr}.paths{grid-template-columns:1fr 1fr}.era-body ul{columns:1}.step{grid-template-columns:58px 1fr}.step span{grid-column:2}}
+    @media(max-width:560px){.wrap{width:min(100% - 22px,1180px)}.top{flex-direction:column;align-items:flex-start}.hero{padding:48px 0}h1{font-size:3.4rem}.doors,.paths,.streams,.wave-grid,.audit{grid-template-columns:1fr}.map ul,.refs{columns:1}summary{grid-template-columns:58px 1fr}.era-date{grid-column:2}.step{grid-template-columns:44px 1fr}}
+    @media(print){.jump{display:none}.door,.wave,.gate{box-shadow:none}details{break-inside:avoid}details.era>.era-body{display:grid!important}body{background:#fff}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <header class="mast">
+    <div class="wrap">
+      <div class="top"><div class="brand">Couch Commons · History Project · Passes 3–10</div><div class="status">First actual outline</div></div>
+      <div class="hero">
+        <div><div class="eyebrow">A map readers can travel</div><h1>The human mind through time</h1><p>A global website architecture for the history of minds, emotions, distress, care, coping, power, psychology, social work, brain science, rights, and everyday life.</p></div>
+        <div class="hero-note"><strong>Mapped, not published.</strong><br>This is the first real content outline. It defines the collection and page jobs; it is not article copy, implementation, or permission to publish.</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="jump" aria-label="Outline sections"><div class="wrap"><a href="#promise">Promise</a><a href="#architecture">Architecture</a><a href="#time">Time</a><a href="#questions">Questions</a><a href="#voices">Experience</a><a href="#routes">Routes</a><a href="#anatomy">Page anatomy</a><a href="#sequence">Sequence</a><a href="#audit">Audit</a><a href="#citations">Citations</a><a href="#decision">Decision</a></div></nav>
+
+  <main class="wrap">
+    <section class="intro" id="promise">
+      <h2 class="title">The promise</h2>
+      <div><p class="lead">Not a parade of famous Western doctors. A connected public reference that asks what people believed, what happened to them, who held power, how ideas traveled, what historians dispute, and what evidence can honestly support.</p><div class="bright">The present is not the finish line. Historical explanation and current evidence remain visibly separate.</div></div>
+    </section>
+
+    <section id="architecture">
+      <h2 class="title">Four equal doors</h2>
+      <div class="doors">
+        <article class="door"><span>01</span><h3>Travel through time</h3><p>Eleven overlapping global bands. Regional dates stay regional.</p></article>
+        <article class="door"><span>02</span><h3>Follow a question</h3><p>Twelve long-arc guides answer the questions people actually bring.</p></article>
+        <article class="door"><span>03</span><h3>Hear experience</h3><p>Direct voices, mediated voices, family, care workers, movements, and honest silences.</p></article>
+        <article class="door"><span>04</span><h3>Explore connections</h3><p>Places plus translation, migration, empire, diaspora, markets, rights, and data.</p></article>
+      </div>
+      <div class="map"><h2 class="title">The collection</h2><ul><li><strong>Start here:</strong> global story, fair terminology, methods, archive, then versus now.</li><li><strong>Time:</strong> material lives before writing through networked minds.</li><li><strong>Questions:</strong> mind, distress, care, treatment, emotion, disciplines, trauma, addiction, social work, wellness.</li><li><strong>Experience:</strong> who spoke, who was described, who cared, who organized, who is missing.</li><li><strong>Places:</strong> region-led doors built only when the evidence is ready.</li><li><strong>Connections:</strong> named routes and mechanisms; resemblance alone does not prove influence.</li><li><strong>Evidence:</strong> sources, labels, translation, “firsts,” diagnosis, treatment evidence, ethics, corrections.</li><li><strong>Discovery:</strong> useful answer blocks and internal links without thin keyword pages.</li></ul></div>
+    </section>
+
+    <section id="time">
+      <h2 class="title">Eleven overlapping time bands</h2>
+      <p class="lead">Open each band to see its job and focused page set. The dates orient; they do not claim that the world changed in lockstep.</p>
+      <div class="eras">
+        <details class="era" open><summary><span class="era-id">T00</span><span class="era-title">Before writing</span><span class="era-date">Deep prehistory → local written archives</span></summary><div class="era-body"><p><strong>Job:</strong> Teach inference before telling stories about prehistoric minds. A healed skull can support an intervention; it cannot by itself establish psychiatric purpose, belief, or feeling. <a href="https://doi.org/10.1038/s41598-018-23914-1">Evidence anchor</a>.</p><ul><li>How can we study minds before words?</li><li>Trepanation: what can a hole in a skull tell us?</li><li>Did communities care for disabled people?</li><li>Evidence lab: from bone to claim</li></ul></div></details>
+        <details class="era"><summary><span class="era-id">T01</span><span class="era-title">First written worlds</span><span class="era-date">c. 3200–500 BCE</span></summary><div class="era-body"><p><strong>Job:</strong> Add texts without inventing a medicine-versus-magic ladder. Mesopotamian signs, Nile worlds, household appeals, embodied selves, and the archive's exclusions.</p><ul><li>Mesopotamian signs and suffering</li><li>Is <em>Ludlul</em> a patient memoir?</li><li>Egypt's heart, brain, body, and family</li><li>Read the Edwin Smith Papyrus fairly</li><li>Nubia and Kush beyond Egypt's shadow</li><li>Breath, heart, spirit, embodied selves</li></ul></div></details>
+        <details class="era"><summary><span class="era-id">T02</span><span class="era-title">Many classical worlds</span><span class="era-date">c. 800 BCE–600 CE</span></summary><div class="era-body"><p><strong>Job:</strong> Put several traditions in parallel without pretending they shared one age. Compare only after explaining each on its own terms.</p><ul><li>Greek brain, soul, regimen, sanctuary</li><li>Roman patients, households, law, Galen</li><li>South Asian selves, <em>manas</em>, suffering</li><li>Why <em>unmada</em> is not schizophrenia</li><li>Chinese <em>xin</em> and <em>qing</em></li><li><em>Dian</em>, <em>kuang</em>, and plural care</li><li>Who had a choice of healer?</li><li>Indigenous American research door</li></ul></div></details>
+        <details class="era"><summary><span class="era-id">T03</span><span class="era-title">Translation worlds</span><span class="era-date">c. 300–1200 CE</span></summary><div class="era-body"><p><strong>Job:</strong> Replace disappearance-and-rediscovery with multilingual work across monasteries, courts, ports, hospitals, shrines, and streets.</p><ul><li>Late-antique inner lives and <em>acedia</em></li><li>Greek–Syriac–Arabic translation web</li><li>What translators actually did</li><li>Arabic and Persian sciences of the soul</li><li>The bimaristan evidence</li><li>Jewish Arabic/Hebrew/Latin worlds</li><li>Dunhuang and Buddhist routes</li><li>African manuscripts and their limits</li></ul></div></details>
+        <details class="era"><summary><span class="era-id">T04</span><span class="era-title">Regional syntheses &amp; early global empires</span><span class="era-date">c. 1100–1700 CE</span></summary><div class="era-body"><p><strong>Job:</strong> Keep regional knowledge-making visible as conquest, print, slavery, mission, and empire create new encounters and coercion.</p><ul><li>Persianate and South Asian entanglements</li><li>East Asian change after the classics</li><li>Southeast Asian specialists in colonial text</li><li>European care, law, and coercion</li><li>Witch-hunt shortcut: why it fails</li><li>Melancholy before depression</li><li>Anatomy, Burton, Descartes</li><li>Did Descartes invent dualism?</li><li>Nahua colonial translation zone</li><li>San Hipólito and colonial care</li><li>Atlantic African healing worlds</li><li>Letters and petitions before psychiatry</li></ul></div></details>
+        <details class="era"><summary><span class="era-id">T05</span><span class="era-title">Classification, confinement, reform</span><span class="era-date">c. 1650–1870</span></summary><div class="era-body"><p><strong>Job:</strong> Explain institutional and medical jurisdiction without a rescue myth. Reviewed nodes remain internal: Pratt's original pamphlet is unopened, and St. Thomas letters retain language, manuscript, rights, and descendant-review gates.</p><ul><li>Nerves, sensibility, competing enlightenments</li><li>The asylum's five jobs</li><li>Did moral treatment feel moral?</li><li>Commitment, payment, visit, escape</li><li>Enslavement and racial diagnosis</li><li>Colonial South/Southeast Asian asylums</li><li>Africa, Caribbean, Latin America, Oceania</li><li>Who gets believed in the Ann Pratt official dossier?</li><li>Psychology before the lab</li><li>Six St. Thomas letters, six mediation chains</li></ul></div></details>
+        <details class="era"><summary><span class="era-id">T06</span><span class="era-title">Disciplines, empires, mass institutions</span><span class="era-date">c. 1840–1914</span></summary><div class="era-body"><p><strong>Job:</strong> Build professional history from institutions, labor, subjects, colonies, and critics—not founder portraits. Utica remains a source stop and does not enter this page set.</p><ul><li>Psychiatry becomes a profession</li><li>Psychology's many laboratories</li><li>Life inside expanding asylums</li><li>Imperial categories travel and change</li><li>Degeneration, heredity, identity</li><li>Localization and the neuron</li><li>Social care becomes social work</li><li>Psychoanalysis is a network</li><li>Children removed, families ruptured</li><li>Dullunda: law on paper, practice in reports</li></ul></div></details>
+        <details class="era"><summary><span class="era-id">T07</span><span class="era-title">War, testing, analysis, welfare</span><span class="era-date">c. 1914–1945</span></summary><div class="era-body"><p><strong>Job:</strong> Show expertise used to heal, select, measure, rehabilitate, persuade, and exclude at population scale.</p><ul><li>Shell shock is not simply old PTSD</li><li>Tests enter armies, schools, borders, work</li><li>Child guidance, counseling, casework</li><li>International mental hygiene</li><li>Eugenics across borders</li><li>Forced sterilization and resistance</li><li>Somatic treatment, risk, consent</li><li>Colonial psychiatry between wars</li><li>War and occupation across Asia</li><li>Aktion T4 and disabled victims</li><li>Nicolat: publishing beside an unopened file chain</li></ul></div></details>
+        <details class="era"><summary><span class="era-id">T08</span><span class="era-title">Rights, drugs, decolonization</span><span class="era-date">c. 1945–1980</span></summary><div class="era-body"><p><strong>Job:</strong> Explain why drugs, independence, welfare states, therapies, and movements changed possibilities without causing one universal transition.</p><ul><li>The psychopharmacology turning point</li><li>Benefit, harm, marketing, patient reports</li><li>Why medicine did not close the asylum</li><li>Decolonization and institutional inheritance</li><li>Fanon's clinical and political route</li><li>Community experiments across regions</li><li>Patients, survivors, families organize</li><li>Competing psychologies</li><li>Trauma after mass violence</li><li>WHO, ICD, professions, authority</li></ul></div></details>
+        <details class="era"><summary><span class="era-id">T09</span><span class="era-title">Diagnosis, markets, neuroscience, recovery</span><span class="era-date">c. 1970–2000</span></summary><div class="era-body"><p><strong>Job:</strong> Show manuals, insurance, movements, markets, brain research, and law changing mental health together.</p><ul><li>DSM and ICD: different histories</li><li>Reliability is not validity</li><li>PTSD enters the manual</li><li>CT, PET, MRI, and overclaiming</li><li>The chemical-imbalance story</li><li>Addiction, crime, medicine, harm reduction</li><li>Liberation, abandonment, community care</li><li>Italy, Brazil, Caracas</li><li>Culture in diagnosis</li><li>Creator-specific relational models</li><li>Neurodiversity's collective roots</li><li>When reform fails</li></ul></div></details>
+        <details class="era"><summary><span class="era-id">T10</span><span class="era-title">Networked minds</span><span class="era-date">c. 2000–present</span></summary><div class="era-body"><p><strong>Job:</strong> Make the present historical and contestable: rights, access, markets, platforms, community authority, and surveillance.</p><ul><li>CRPD and rights-bearing subjects</li><li>Global mental health: access or empire?</li><li>The Friendship Bench travels</li><li>Lived expertise and paid work</li><li>Forums, apps, influencers, self-diagnosis</li><li>Digital evidence: what works for whom?</li><li>Wellness becomes an industry</li><li>Land, sea, climate, displacement</li><li>COVID-19 systems stress test</li><li>AI, prediction, privacy, bias</li><li>What might the present get wrong?</li></ul></div></details>
+      </div>
+    </section>
+
+    <section id="questions">
+      <h2 class="title">Twelve human questions</h2>
+      <p class="lead">These are the authority guides—the pages most likely to satisfy broad search intent without turning history into keyword confetti.</p>
+      <div class="paths">
+        <article class="path"><span class="id">Q01</span><h3>Where did mind live?</h3><p>Brain, heart, breath, soul, body, land, kin, and false equivalence.</p></article>
+        <article class="path"><span class="id">Q02</span><h3>What counted as illness?</h3><p>Period terms, distress, difference, disability, danger, gift, and diagnosis.</p></article>
+        <article class="path"><span class="id">Q03</span><h3>Who cared?</h3><p>Household, community, religious, medical, Indigenous, peer, and mutual aid.</p></article>
+        <article class="path"><span class="id">Q04</span><h3>How did treatment change?</h3><p>Purpose, reception, evidence, relief, risk, coercion, and consent.</p></article>
+        <article class="path"><span class="id">Q05</span><h3>Do emotions have history?</h3><p>Words, moods, temperament, regulation, relationship, and judgment.</p></article>
+        <article class="path"><span class="id">Q06</span><h3>How did psychologies form?</h3><p>Philosophy, lab, school, clinic, industry, empire, adaptation, critique.</p></article>
+        <article class="path"><span class="id">Q07</span><h3>How did psychiatry gain power?</h3><p>Law, institution, diagnosis, medicine, courts, resistance, reform.</p></article>
+        <article class="path"><span class="id">Q08</span><h3>What changed with brain science?</h3><p>Injury, anatomy, neuron, chemistry, imaging, genetics, prediction.</p></article>
+        <article class="path"><span class="id">Q09</span><h3>How did trauma become an idea?</h3><p>War, violence, memory, testimony, culture, diagnosis, collective response.</p></article>
+        <article class="path"><span class="id">Q10</span><h3>How did addiction change?</h3><p>Vice, crime, illness, commerce, mutual aid, medicine, public health.</p></article>
+        <article class="path"><span class="id">Q11</span><h3>How did social care become systems?</h3><p>Poor relief, mutual aid, settlement, social work, welfare, rights.</p></article>
+        <article class="path"><span class="id">Q12</span><h3>Is wellness ancient or a business?</h3><p>Coping, good-life ideals, mindfulness, resilience, recovery, markets.</p></article>
+      </div>
+    </section>
+
+    <section id="voices">
+      <h2 class="title">Experience is a structure</h2>
+      <p class="lead">“Patient voice” is not a decorative quotation. Every page says who spoke, who recorded it, who translated it, who kept it, and what remains unknown.</p>
+      <div class="streams">
+        <article class="stream"><strong>V01 · Speaking for themselves</strong><p>Letters, petitions, diaries, memoirs, testimony, oral history, publications, art, blogs, and recorded speech.</p></article>
+        <article class="stream"><strong>V02 · Words inside another record</strong><p>Healers, clerks, judges, relatives, missionaries, and translators control what survives.</p></article>
+        <article class="stream"><strong>V03 · Families and chosen families</strong><p>Care, conflict, cost, commitment, discharge, advocacy, burden, love, and refusal.</p></article>
+        <article class="stream"><strong>V04 · The workers history forgets</strong><p>Nurses, attendants, social workers, peer workers, interpreters, domestic workers, and ritual specialists.</p></article>
+        <article class="stream"><strong>V05 · Writing back and organizing</strong><p>Survivor, disability, Mad, neurodivergent, Indigenous, queer, feminist, antiracist, family, and labor movements.</p></article>
+        <article class="stream"><strong>V06 · When the archive goes quiet</strong><p>Record destruction, language, privacy, protocol, unequal preservation, incomplete searches, and honest unknowns.</p></article>
+      </div>
+    </section>
+
+    <section id="routes">
+      <h2 class="title">Routes, power, consequence</h2>
+      <div class="routes"><span class="route">Translation webs</span><span class="route">Overland Central Asia</span><span class="route">Indian Ocean ports</span><span class="route">Trans-Saharan networks</span><span class="route power">Atlantic slavery</span><span class="route power">Mission &amp; colonial law</span><span class="route">Professional migration</span><span class="route power">Removal &amp; displacement</span><span class="route">WHO · PAHO · ICD</span><span class="route">Liberation &amp; survivor movements</span><span class="route power">Pharma · insurance · markets</span><span class="route power">Platforms · surveillance · AI</span></div>
+      <p class="lead">A line on a map is not proof of influence. Every connection page must name the people, language, institution, object, law, journey, or medium that made movement possible.</p>
+    </section>
+
+    <section id="anatomy">
+      <h2 class="title">Anatomy of a strong page</h2>
+      <div class="anatomy">
+        <div class="step"><strong>Direct answer</strong><span>Answer the real question in 40–80 honest words.</span></div>
+        <div class="step"><strong>The catch</strong><span>Expose the misconception, category problem, or evidence limit.</span></div>
+        <div class="step"><strong>Time &amp; place</strong><span>Say where and when the account applies—and where it does not.</span></div>
+        <div class="step"><strong>Words then</strong><span>Original terms, language, translation, and semantic change.</span></div>
+        <div class="step"><strong>Explanations</strong><span>What different people thought was happening, in context.</span></div>
+        <div class="step"><strong>Consequences</strong><span>Care, coping, relief, status, rights, labor, coercion, and harm.</span></div>
+        <div class="step"><strong>Voice or silence</strong><span>Direct experience where ethical; otherwise name the exact gap.</span></div>
+        <div class="step"><strong>Movement</strong><span>Named routes, translators, migrants, institutions, media, and power.</span></div>
+        <div class="step"><strong>Dispute</strong><span>Serious interpretations, evidence, and fair wording.</span></div>
+        <div class="step"><strong>Then versus now</strong><span>Current evidence in a visibly separate section; never medical advice.</span></div>
+        <div class="step"><strong>How we know</strong><span>Claims, sources, objects, records, translation, limits.</span></div>
+        <div class="step"><strong>Where next</strong><span>Time, theme, place, experience, and evidence links.</span></div>
+        <div class="step"><strong>Citations</strong><span>Useful body links plus complete end references.</span></div>
+      </div>
+    </section>
+
+    <section id="sequence">
+      <h2 class="title">Recommended publishing waves</h2>
+      <p class="small">Sequencing guidance only. No pilot research, drafting, implementation, or publication has started.</p>
+      <div class="wave-grid">
+        <article class="wave"><h3>Wave A · Prove the method</h3><ol><li>Collection landing page</li><li>How we know</li><li>Whose voice survives</li><li>Trepanation evidence lab</li><li>Who gets believed in the Ann Pratt official dossier?</li><li>Psychiatry and confinement guide</li><li>Treatment evidence lab</li></ol><p><strong>Hold:</strong> no public drafting until Pratt's original publication and commission chain are opened and reviewed.</p></article>
+        <article class="wave"><h3>Wave B · Ancient &amp; connected worlds</h3><p>First written worlds, many classical worlds, translation worlds, mind, distress, care, and the first four connection routes.</p></article>
+        <article class="wave"><h3>Wave C · Institutions &amp; rights</h3><p>Classification through the networked present; treatment, disciplines, trauma, addiction, social work; all lived-experience streams.</p></article>
+        <article class="wave"><h3>Wave D · Place-led depth</h3><p>Regional guides publish only when locally grounded evidence and review meet the threshold. Search volume cannot erase research debt.</p></article>
+      </div>
+    </section>
+
+    <section id="audit">
+      <h2 class="title">Balance audit</h2>
+      <div class="audit">
+        <article><h3>What the architecture prevents</h3><ul><li>No Western chronology with “elsewhere” sidebars.</li><li>No ancient Egypt standing in for Africa or India for Asia.</li><li>No demon-to-science progress ladder.</li><li>No modern-equals-humane assumption.</li><li>No founder-only discipline histories.</li><li>No patient quotation used as garnish.</li><li>No weird-treatment spectacle.</li><li>No thin search-doorway pages.</li></ul></article>
+        <article><h3>What still blocks “complete”</h3><ul><li>Local-language and locally authored work in weak cells.</li><li>Nation- and community-led Indigenous review.</li><li>More direct experience outside Europe and North America.</li><li>Global nursing, social work, counseling, family, peer, OT, and harm-reduction histories.</li><li>Country-specific political abuse, coercion, eugenics, and reform.</li><li>Quantitative search-demand validation.</li><li>Claim-level sourcing for every selected page.</li></ul></article>
+      </div>
+    </section>
+
+    <section id="citations">
+      <h2 class="title">Selected citations</h2>
+      <p class="lead">Useful links appear where the claim is made. Full working bibliographies and limitations live in the six research foundations.</p>
+      <ol class="refs">
+        <li>Antić, “Postcolonial and Transcultural Psychiatry in Africa” (2021). <a href="https://doi.org/10.1177/0952695121993702">DOI</a>.</li>
+        <li>Ban, “Fifty Years Chlorpromazine” (2007). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2655089/">Full text</a>.</li>
+        <li>Chen, “Pre-modern Madness.” <a href="https://doi.org/10.4324/9780203740262-18">DOI</a>.</li>
+        <li>Chibanda et al., Friendship Bench trial (2016). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4865009/">Full text</a>.</li>
+        <li>Crislip, “Spirituality, Illness, and the Bible” (2023). <a href="https://doi.org/10.1177/00209643221146234">DOI</a>.</li>
+        <li>Dols, “Insanity and Its Treatment in Islamic Society” (1987). <a href="https://doi.org/10.1017/S0025727300046287">DOI</a>.</li>
+        <li>Edington, colonial psychiatry in French Indochina (2021). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8437878/">Full text</a>.</li>
+        <li>Electronic Babylonian Library, <em>Ludlul bēl nēmeqi</em>. <a href="https://www.ebl.lmu.de/corpus/L/2/2">Critical corpus</a>.</li>
+        <li>Jain et al., Indian history of psychiatry (2018). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6198594/">Full text</a>.</li>
+        <li>Mattern, “Galen and the Words of Patients” (2025). <a href="https://doi.org/10.1017/mdh.2024.41">DOI</a>.</li>
+        <li>Pomeroy et al., Shanidar Cave (2020). <a href="https://doi.org/10.15184/aqy.2019.207">DOI</a>.</li>
+        <li>Ramirez Rozzi and Froment, Neolithic cranial surgery (2018). <a href="https://doi.org/10.1038/s41598-018-23914-1">DOI</a>.</li>
+        <li>Salguero, <em>Translating Buddhist Medicine</em> (2014). <a href="https://www.pennpress.org/9780812246117/translating-buddhist-medicine-in-medieval-china/">Publisher</a>.</li>
+        <li>Takasuna and Wong, psychology in Japan and China (2016). <a href="https://doi.org/10.1002/ijop.12326">DOI</a>.</li>
+        <li>United Nations, Convention on the Rights of Persons with Disabilities. <a href="https://www.un.org/development/desa/disabilities/convention.html">UN</a>.</li>
+        <li>Underwood, late-antique healthcare (2018). <a href="https://doi.org/10.1525/sla.2018.2.3.342">DOI</a>.</li>
+        <li>Willis, “Madness, Emotion and the Archive” (2025). <a href="https://doi.org/10.1017/S0080440125100340">DOI</a>.</li>
+        <li>WHO, <em>World Mental Health Report</em> (2022). <a href="https://www.who.int/publications-detail-redirect/9789240049338/">WHO</a>.</li>
+        <li>WHO and OHCHR, mental health, rights, and legislation (2023). <a href="https://www.who.int/publications/i/item/9789240080737">WHO</a>.</li>
+      </ol>
+    </section>
+
+    <section class="gate" id="decision">
+      <h2>Decision point</h2>
+      <p>Review the architecture: approve, revise, merge, or cut page jobs—not unwritten claims. The canonical full outline is <code>outline/MASTER-CONTENT-OUTLINE.md</code>; the chronological detail and balance matrix sit beside it.</p>
+      <p><strong>Explore the chronology:</strong> the mapped time bands and topic doors now have a <a href="HISTORICAL-TIMELINE.html">searchable historical timeline</a>.</p>
+      <p><strong>Next only after approval:</strong> choose one demanding pilot cluster and build its claim ledger, source packet, draft, reviews, and Safari prototype. That work has not started.</p>
+    </section>
+  </main>
+  <footer class="wrap">Couch Commons · History of the Mind and Mental Health · First actual outline · Aug. 18, 2026</footer>
+</body>
+</html>

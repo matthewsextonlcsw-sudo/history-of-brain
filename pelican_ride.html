@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16-Bit Pelican Ride</title>
+    <style>
+        :root {
+            --sky-top: #FF7F50;
+            --sky-bottom: #FFD700;
+            --ocean: #00CED1;
+            --ocean-deep: #40E0D0;
+            --sand: #F4A460;
+            --bike-red: #FF0000;
+            --pelican-white: #FFFFFF;
+            --pelican-orange: #FFA500;
+            --pelican-grey: #A9A9A9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* The "Game Screen" */
+        .stage {
+            width: 640px;
+            height: 480px;
+            background: linear-gradient(to bottom, var(--sky-top), var(--sky-bottom));
+            position: relative;
+            overflow: hidden;
+            border: 12px solid #444;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            image-rendering: pixelated;
+        }
+
+        /* Parallax Layers */
+        .layer {
+            position: absolute;
+            width: 200%; /* Double width for scrolling */
+            height: 100%;
+            left: 0;
+            top: 0;
+            will-change: transform;
+        }
+
+        /* --- Layer 1: Sky/Sun --- */
+        .layer-sky {
+            z-index: 1;
+        }
+        .sun {
+            position: absolute;
+            top: 40px;
+            right: 60px;
+            width: 60px;
+            height: 60px;
+            background: #FFFACD;
+            border-radius: 50%;
+            box-shadow: 0 0 40px #FFD700;
+        }
+
+        /* --- Layer 2: Distant Islands --- */
+        .layer-mountains {
+            z-index: 2;
+            bottom: 30%;
+            height: 40%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100"><path d="M0 100 L50 30 L100 80 L150 10 L200 90 L300 20 L400 100 Z" fill="%234B8B4B"/></svg>') repeat-x;
+            background-size: 400px 100px;
+            animation: scroll-bg 20s linear infinite;
+        }
+
+        /* --- Layer 3: Ocean --- */
+        .layer-ocean {
+            z-index: 3;
+            bottom: 20%;
+            height: 40%;
+            background: var(--ocean);
+            animation: scroll-bg 10s linear infinite;
+        }
+        .ocean-wave {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 40"><rect width="400" height="40" fill="%2300CED1"/><path d="M0 20 Q50 10 100 20 T200 20 T300 20 T400 20" stroke="%2340E0D0" fill="transparent" stroke-width="10"/></svg>') repeat-x;
+            opacity: 0.8;
+            animation: scroll-bg 4s steps(8) infinite;
+        }
+
+        /* --- Layer 4: Boardwalk/Ground --- */
+        .layer-ground {
+            z-index: 4;
+            bottom: 0;
+            height: 25%;
+            background: var(--sand);
+            animation: scroll-bg 3s linear infinite;
+        }
+        .boardwalk {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(90deg, transparent, transparent 40px, #D2B48C 41px);
+        }
+
+        /* --- THE MAIN CHARACTER: Pelican + Bike --- */
+        .actor-container {
+            position: absolute;
+            bottom: 12%; /* On the boardwalk */
+            left: 25%;
+            z-index: 10;
+            transform-origin: bottom center;
+            animation: pelican-bob 1.2s steps(6) infinite;
+        }
+
+        .bicycle {
+            position: absolute;
+            bottom: 0;
+            width: 120px;
+            height: 80px;
+        }
+
+        /* Simple CSS Bike Shape */
+        .bike-frame {
+            position: absolute;
+            bottom: 25px;
+            left: 30px;
+            width: 50px;
+            height: 40px;
+            border-left: 4px solid #333;
+            border-bottom: 4px solid #333;
+            border-radius: 0 0 0 10px;
+        }
+        .bike-wheel {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #333;
+            border-radius: 50%;
+            bottom: 0;
+            background: repeating-conic-gradient(from 0deg, transparent 0deg 20deg, #333 21deg 22deg);
+        }
+        .wheel-back { left: 0; }
+        .wheel-front { right: 50px; }
+        .wheel-spin {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px dashed #333;
+            animation: wheel-spin 0.8s linear infinite;
+        }
+
+        /* The Pelican */
+        .pelican {
+            position: absolute;
+            bottom: 45px;
+            left: 20px;
+            width: 70px;
+            height: 70px;
+        }
+
+        .pelican-body {
+            position: absolute;
+            width: 50px;
+            height: 40px;
+            background: var(--pelican-white);
+            border-radius: 50% 50% 40% 40%;
+            top: 10px;
+            left: 10px;
+            box-shadow: inset -5px -5px 0 rgba(0,0,0,0.1);
+        }
+
+        .pelican-head {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: var(--pelican-white);
+            border-radius: 50%;
+            top: -5px;
+            left: 35px;
+        }
+
+        .pelican-eye {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: #000;
+            border-radius: 50%;
+            top: 10px;
+            right: 8px;
+            animation: eye-blink 3s infinite;
+        }
+
+        .pelican-beak {
+            position: absolute;
+            width: 25px;
+            height: 15px;
+            background: var(--pelican-orange);
+            border-radius: 0 20px 20px 0;
+            top: 12px;
+            left: 50px;
+        }
+
+        .pelican-wing {
+            position: absolute;
+            width: 35px;
+            height: 20px;
+            background: var(--pelican-white);
+            border-radius: 20px;
+            top: 20px;
+            left: 5px;
+            transform-origin: left center;
+            animation: wing-flap 1.2s steps(4) infinite;
+            z-index: -1;
+        }
+
+        /* --- ANIMATIONS --- */
+
+        @keyframes scroll-bg {
+            from { transform: translateX(0); }
+            to { transform: translateX(-400px); }
+        }
+
+        @keyframes pelican-bob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes wheel-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes eye-blink {
+            0%, 95%, 100% { transform: scaleY(1); }
+            97% { transform: scaleY(0); }
+        }
+
+        @keyframes wing-flap {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(30deg); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="stage">
+        <!-- Layer 1: Sky -->
+        <div class="layer layer-sky">
+            <div class="sun"></div>
+        </div>
+
+        <!-- Layer 2: Mountains -->
+        <div class="layer layer-mountains"></div>
+
+        <!-- Layer 3: Ocean -->
+        <div class="layer layer-ocean">
+            <div class="ocean-wave"></div>
+        </div>
+
+        <!-- Layer 4: Ground -->
+        <div class="layer layer-ground">
+            <div class="boardwalk"></div>
+        </div>
+
+        <!-- Actor: Pelican & Bike -->
+        <div class="actor-container">
+            <div class="bicycle">
+                <div class="bike-frame"></div>
+                <div class="bike-wheel wheel-back">
+                    <div class="wheel-spin"></div>
+                </div>
+                <div class="bike-wheel wheel-front">
+                    <div class="wheel-spin"></div>
+                </div>
+            </div>
+            
+            <div class="pelican">
+                <div class="pelican-wing"></div>
+                <div class="pelican-body"></div>
+                <div class="pelican-head">
+                    <div class="pelican-eye"></div>
+                    <div class="pelican-beak"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
